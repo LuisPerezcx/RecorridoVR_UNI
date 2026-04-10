@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Recorrido Universidad - A-Frame</title>
+    <meta name="description" content="Recorrido inmersivo de la universidad con Meta Quest 3">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- A-Frame y extensiones -->
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.2.0/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@r128/examples/js/loaders/GLTFLoader.js"></script>
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <!-- Panel de información -->
+    <div class="info">
+      <div><strong>🎓 Recorrido Universidad</strong></div>
+      <div>📍 Ubicación: <span id="location-display">1/7</span></div>
+      <div>👆 Apunta y presiona GATILLO</div>
+    </div>
+
+    <!-- Escena A-Frame -->
+    <a-scene xrweb>
+      <!-- Skybox dinámico -->
+      <a-sky id="skybox" src="IA fotos/1.PHOTOSPHERE.jpg" rotation="0 0 0"></a-sky>
+      
+      <!-- Los botones se generarán dinámicamente aquí por app.js -->
+      <a-entity id="buttons-container"></a-entity>
+
+      <!-- Cámara con cursor visual -->
+      <a-camera position="0 1.6 0" look-controls wasd-controls>
+        <a-cursor 
+          id="camera-cursor"
+          position="0 0 -1"
+          raycaster="objects: .clickable, .info-point;"
+          geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;" 
+          material="color: #ffff; opacity: 0.3;">
+        </a-cursor>
+      </a-camera>
+
+      <!-- ===== MANOS (solo visualización) ===== -->
+      
+      <a-entity 
+        id="left-hand"
+        hand-controls="hand: left; modelStyle: lowPoly; opacity: 0.4;"
+        position="0 0 0">
+      </a-entity>
+
+      <a-entity 
+        id="right-hand"
+        hand-controls="hand: right; modelStyle: lowPoly; opacity: 0.4;"
+        position="0 0 0">
+      </a-entity>
+
+      <!-- ===== CONTROLES CON RAYCASTER Y LÍNEA LÁSER ===== -->
+      
+      <a-entity 
+        id="left-controller"
+        oculus-touch-controls="hand: left; model: true;"
+        raycaster="far: 100; interval: 0; objects: .clickable, .info-point; showLine: false;"
+        line="color: #00ccff; opacity: 0.8;"
+        position="0 0 0">
+      </a-entity>
+
+      <a-entity 
+        id="right-controller"
+        oculus-touch-controls="hand: right; model: true;"
+        raycaster="far: 100; interval: 0; objects: .clickable, .info-point; showLine: true;"
+        line="color: #ff9900; opacity: 0.8;"
+        position="0 0 0">
+      </a-entity>
+
+    </a-scene>
+
+    <!-- Script de configuración de escenas -->
+    <script src="scenes.js"></script>
+    
+    <!-- Script de la aplicación -->
+    <script src="app.js"></script>
+  </body>
+</html>
