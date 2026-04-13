@@ -8,17 +8,57 @@ const startingScene = 1;  // CAMBIAR AQUÍ para empezar en otra escena (1-7)
 
 let currentLocation = startingScene;
 let activeLaser = 'right';  // 'left' o 'right' - controla qué láser está visible
+let preloadedSceneData = {};  // Caché para escenas precargadas
+
+/**
+ * Preload (precarga) de la siguiente escena para mejor performance
+ * Se ejecuta de fondo mientras el usuario está viendo la escena actual
+ * TAMBIÉN precalcula el ángulo de rotación para evitar el jank
+ */
+function preloadNextScene(sceneNumber) {
+  const nextScene = scenes[sceneNumber];
+  if (!nextScene || preloadedSceneData[sceneNumber]) {
+    return;  // Ya está precargada
+  }
+  
+  // Precargar imagen en background
+  const img = new Image();
+  img.src = nextScene.image;
+  
+  // ⚡ PRECALCULAR el ángulo de rotación para la siguiente escena
+  let nextAngle = 0;
+  if (nextScene.nextPos) {
+    const coords = nextScene.nextPos.split(' ').map(v => parseFloat(v));
+    const [x, y, z] = coords;
+    const angleRad = Math.atan2(z, x);
+    nextAngle = angleRad * (180 / Math.PI);
+  }
+  
+  preloadedSceneData[sceneNumber] = {
+    image: img,
+    angle: nextAngle,  // Ángulo precalculado
+    loadedAt: Date.now()
+  };
+  
+  console.log(`⚡ Preload: Escena ${sceneNumber} lista (ángulo: ${nextAngle}°)`);
+}
 
 /**
  * Actualiza la escena actual: cambia la imagen, regenera botones y orienta la cámara.
+ * @param {boolean} skipOrient - Si true, no reorienta la cámara (ya fue hecha en handleNavigation)
  */
-function updateScene() {
+function updateScene(skipOrient = false) {
   const currentScene = scenes[currentLocation];
   if (!currentScene) {
     console.error(`❌ Escena ${currentLocation} no existe`);
     return;
   }
 
+  // ⚡ Solo orienta si NO fue orientada previamente en handleNavigation
+  if (!skipOrient) {
+    orientCameraToNextButton();
+  }
+  
   // Cambiar la imagen del skybox
   const skybox = document.querySelector('#skybox');
   if (skybox) {
@@ -35,8 +75,16 @@ function updateScene() {
   createButtonsForScene();
   createInfoPointsForScene();
   
-  // Orientar la cámara hacia el botón NEXT
-  orientCameraToNextButton();
+  // ⚡ PRELOAD de la siguiente escena para mejor UX
+  if (currentScene.nextDestination) {
+    preloadNextScene(currentScene.nextDestination);
+  }
+  // Preload de botones con destino (extraButtons)
+  if (currentScene.extraButtons) {
+    currentScene.extraButtons.forEach(btn => {
+      preloadNextScene(btn.destination);
+    });
+  }
   
   console.log(`✅ Escena ${currentLocation} cargada`);
 }
@@ -50,7 +98,7 @@ function updateScene() {
  * 
  * Estructura de botones:
  * - Botón NEXT: especificado en nextPos
- * - Botón PREV: calculado automáticamente 180° atrás (si showPrev es true)
+ * - Botón PREV: usa prevPos explícito, o se calcula 180° de nextPos, o se omite
  * - Botones adicionales: definidos en extraButtons
  */
 function createButtonsForScene() {
@@ -80,22 +128,32 @@ function createButtonsForScene() {
     buttonIndex++;
   }
   
-  // ===== CREAR BOTÓN PREV (calculado automáticamente) =====
-  if (currentScene.showPrev && currentScene.nextPos) {
-    const prevPos = calculatePrevPosition(currentScene.nextPos);
-    // El destino prev es la escena anterior
-    const prevDestination = currentLocation - 1;
-    
-    if (prevDestination > 0) {
-      buttonsToCreate.push({
-        destination: prevDestination,
-        pos: prevPos,
-        color: '#ff6b6b',
-        icon: '⬅',
-        type: 'prev'
-      });
-      buttonIndex++;
-    }
+  // ===== CREAR BOTÓN PREV =====
+  // Lógica: 
+  // 1. Si hay prevDestination explícito, usarlo; si no, calcular prevDestination = currentLocation - 1
+  // 2. Luego, usar prevPos explícito o calcular a partir de nextPos
+  let prevPosition = null;
+  const prevDestination = currentScene.prevDestination !== undefined ? currentScene.prevDestination : currentLocation - 1;
+  
+  if (currentScene.prevPos) {
+    // Si hay prevPos explícito, usarlo
+    prevPosition = currentScene.prevPos;
+    console.log(`📍 Using explicit prevPos: ${prevPosition}`);
+  } else if (currentScene.nextPos && prevDestination > 0) {
+    // Si no hay prevPos explícito pero hay nextPos, calcular automáticamente
+    prevPosition = calculatePrevPosition(currentScene.nextPos);
+    console.log(`📍 Calculated prevPos from nextPos: ${prevPosition}`);
+  }
+  
+  if (prevPosition && prevDestination > 0) {
+    buttonsToCreate.push({
+      destination: prevDestination,
+      pos: prevPosition,
+      color: '#ff6b6b',
+      icon: '⬅',
+      type: 'prev'
+    });
+    buttonIndex++;
   }
   
   // ===== AGREGAR BOTONES ADICIONALES =====
@@ -114,8 +172,20 @@ function createButtonsForScene() {
     btnEntity.setAttribute('data-button-type', btnConfig.type || 'extra');
     btnEntity.setAttribute('data-destination', btnConfig.destination);
     btnEntity.setAttribute('position', btnConfig.pos);
-    btnEntity.setAttribute('geometry', 'cylinder: torus; radius: 1.5; height: 0.6;');
-    btnEntity.setAttribute('material', `color: ${btnConfig.color}; opacity: 0.5; emissive: ${btnConfig.color};`);
+    
+    // Usar modelo glTF en lugar de geometría cilíndrica
+    btnEntity.setAttribute('gltf-model', '#arrow-model');
+    btnEntity.setAttribute('scale', '2 2 2');  // Escala mayor para VR (ajusta si necesitas)
+    
+    // Rotar el arrow según el tipo de botón
+    if (btnConfig.type === 'prev') {
+      btnEntity.setAttribute('rotation', '0 180 0');  // Rotar hacia atrás
+    } else {
+      btnEntity.setAttribute('rotation', '0 0 0');  // Next: sin rotación adicional
+    }
+    
+    // Debug: Log para verificar que se crea
+    console.log(`🎯 Arrow creado en ${btnConfig.pos} - Tipo: ${btnConfig.type}`);
     
     container.appendChild(btnEntity);
     
@@ -139,7 +209,7 @@ function createButtonsForScene() {
 
 /**
  * Crea dinámicamente los puntos de información para la escena actual.
- * Los puntos muestran un icono clickeable que revela texto descriptivo.
+ * Los puntos muestran un icono clickeable que revela texto descriptivo con fondo blanco.
  */
 function createInfoPointsForScene() {
   const container = document.querySelector('#buttons-container');
@@ -155,34 +225,59 @@ function createInfoPointsForScene() {
     infoEntity.setAttribute('class', 'info-point');
     infoEntity.setAttribute('data-info-id', index);
     infoEntity.setAttribute('position', infoPoint.pos);
-    infoEntity.setAttribute('background', 'color: white; opacity: 0.8;');
     
-    // Geometría visible (pequeña esfera)
+    // Geometría visible (pequeña esfera clickeable)
     infoEntity.setAttribute('geometry', 'primitive: sphere; radius: 0.3;');
     infoEntity.setAttribute('material', `color: ${infoPoint.color}; opacity: 0.6;`);
     
-    // Texto de información (inicialmente invisible)
+    // Crear contenedor para el texto
+    // Billboard: siempre mira hacia la cámara
+    const textContainer = document.createElement('a-entity');
+    textContainer.setAttribute('position', '0 -1.5 0');
+    textContainer.setAttribute('visible', 'false');
+    textContainer.setAttribute('class', 'info-text-container');
+    textContainer.setAttribute('billboard', '');  // Siempre mira a la cámara
+    
+    // Texto de información con mejor contraste y legibilidad
     const textEntity = document.createElement('a-text');
     textEntity.setAttribute('value', infoPoint.text);
     textEntity.setAttribute('align', 'center');
     textEntity.setAttribute('anchor', 'center');
-    textEntity.setAttribute('position', '0 -1.5 0');
-    textEntity.setAttribute('scale', '2 2 2');
+    textEntity.setAttribute('position', '0 0 0');
+    textEntity.setAttribute('scale', '1.5 1.5 1.5');  // Más grande para VR
     textEntity.setAttribute('color', infoPoint.color);
-    textEntity.setAttribute('visible', 'false');
-    textEntity.setAttribute('class', 'info-text');
+    textEntity.setAttribute('font', 'https://cdn.aframe.io/fonts/Roboto-msdf.json');
+    textEntity.setAttribute('fontImage', 'https://cdn.aframe.io/fonts/Roboto-msdf.png');
+    textEntity.setAttribute('maxWidth', '4');
+    textEntity.setAttribute('wrapCount', '16');
+    textEntity.setAttribute('letterSpacing', '3');  // Más espaciado
+    textEntity.setAttribute('lineHeight', '65');  // Espaciado entre líneas
+    // Outline grueso para mejor contraste
+    textEntity.setAttribute('outlineWidth', '0.15');
+    textEntity.setAttribute('outlineColor', '#000000');
+    // Fondo adaptativo que se ajusta mejor al texto
+    const bgEntity = document.createElement('a-plane');
+    bgEntity.setAttribute('position', '0 0 -0.1');
+    bgEntity.setAttribute('width', '5');  // Más ancho para cualquier texto
+    bgEntity.setAttribute('height', '2.5');  // Más alto para multi-línea
+    bgEntity.setAttribute('material', 'color: #000000; opacity: 0.15; side: double;');
+    bgEntity.setAttribute('class', 'info-bg-subtle');
+    textContainer.appendChild(bgEntity);
     
-    infoEntity.appendChild(textEntity);
+    textEntity.setAttribute('class', 'info-text');
+    textContainer.appendChild(textEntity);
+    
+    infoEntity.appendChild(textContainer);
     container.appendChild(infoEntity);
     
-    // Mostrar/ocultar texto SOLO con cursor visual (no raycaster de controles)
+    // Mostrar/ocultar texto + fondo SOLO con cursor visual (no raycaster de controles)
     infoEntity.addEventListener('mouseenter', () => {
-      textEntity.setAttribute('visible', 'true');
+      textContainer.setAttribute('visible', 'true');
       console.log(`ℹ️ Cursor sobre info punto ${index}: ${infoPoint.text}`);
     });
     
     infoEntity.addEventListener('mouseleave', () => {
-      textEntity.setAttribute('visible', 'false');
+      textContainer.setAttribute('visible', 'false');
     });
   });
   
@@ -190,8 +285,8 @@ function createInfoPointsForScene() {
 }
 
 /**
- * Orienta el skybox y botones hacia el botón NEXT para una navegación natural
- * Mantiene look-controls activo para que el usuario mueva su cabeza
+ * Orienta el skybox y botones hacia el botón NEXT sin transición
+ * Para VR es mejor instantáneo (evita mareo)
  */
 function orientCameraToNextButton() {
   const currentScene = scenes[currentLocation];
@@ -212,13 +307,14 @@ function orientCameraToNextButton() {
   const buttonsContainer = document.querySelector('#buttons-container');
   
   if (skybox) {
+    // ⚡ Cambio instantáneo (sin animación para no marear en VR)
     skybox.setAttribute('rotation', `0 ${angleDeg} 0`);
   }
   if (buttonsContainer) {
     buttonsContainer.setAttribute('rotation', `0 ${angleDeg} 0`);
   }
   
-  console.log(`📷 Skybox y botones orientados a ${angleDeg}° hacia botón NEXT en posición [${x}, ${y}, ${z}]`);
+  console.log(`📷 Skybox y botones orientados instantáneamente a ${angleDeg}°`);
 }
 
 /**
@@ -256,8 +352,36 @@ function handleNavigation(button) {
   
   const destinationScene = parseInt(destination);
   if (scenes[destinationScene]) {
+    // ⚡ ANTES de cambiar de escena: Orienta la cámara a la siguiente escena
+    const nextScene = scenes[destinationScene];
+    if (nextScene && nextScene.nextPos) {
+      const coords = nextScene.nextPos.split(' ').map(v => parseFloat(v));
+      const [x, y, z] = coords;
+      const angleRad = Math.atan2(z, x);
+      const angleDeg = angleRad * (180 / Math.PI);
+      
+      // Rotar skybox y botones ANTES de cambiar escena
+      const skybox = document.querySelector('#skybox');
+      const buttonsContainer = document.querySelector('#buttons-container');
+      
+      if (skybox) {
+        skybox.setAttribute('rotation', `0 ${angleDeg} 0`);
+      }
+      if (buttonsContainer) {
+        buttonsContainer.setAttribute('rotation', `0 ${angleDeg} 0`);
+      }
+    }
+    
+    // AHORA sí cambiar de escena (la cámara ya está orientada correctamente)
     currentLocation = destinationScene;
-    updateScene();
+    updateScene(true);  // true = ya fue orientada en handleNavigation, no re-rotar
+    
+    // ⚡ Preload escenas accesibles desde aquí
+    const scene = scenes[destinationScene];
+    if (scene.nextDestination) {
+      preloadNextScene(scene.nextDestination);
+    }
+    
     console.log(`🎯 Navegando a escena: ${destinationScene}`);
   } else {
     console.error(`❌ La escena ${destinationScene} no existe`);
@@ -292,20 +416,17 @@ function setActiveLaser(hand) {
 }
 
 /**
- * Aplica efecto hover
+ * Aplica efecto hover para modelos glTF
  */
 function setButtonHover(button, isHovering) {
   if (!button) return;
   
-  // Obtener el color actual del botón
-  const currentColor = button.getAttribute('material')?.color || '#ffffff';
-  
   if (isHovering) {
-    // Hacer más brillante (aumentar escala)
-    button.setAttribute('scale', '1.5 1.5 1.5');
+    // Agrandar el modelo
+    button.setAttribute('scale', '2.5 2.5 2.5');
   } else {
     // Volver al tamaño normal
-    button.setAttribute('scale', '1 1 1');
+    button.setAttribute('scale', '2 2 2');
   }
 }
 
@@ -367,6 +488,11 @@ document.addEventListener('DOMContentLoaded', function() {
   
   updateScene();
   setActiveLaser('right');  // Láser derecho activo al inicio
+  
+  // ⚡ Preload inicial de las primeras 3 escenas para mejor UX
+  preloadNextScene(2);
+  preloadNextScene(3);
+  
   console.log('✅ Sistema listo.');
 });
 

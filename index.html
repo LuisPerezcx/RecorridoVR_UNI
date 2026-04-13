@@ -24,6 +24,11 @@
 
     <!-- Escena A-Frame -->
     <a-scene xrweb>
+      <!-- Assets -->
+      <a-assets>
+        <a-asset-item id="arrow-model" src="models/Arrow.glb"></a-asset-item>
+      </a-assets>
+      
       <!-- Skybox dinámico -->
       <a-sky id="skybox" src="IA fotos/1.PHOTOSPHERE.jpg" rotation="0 0 0"></a-sky>
       
@@ -75,8 +80,12 @@
 
     </a-scene>
 
-    <!-- Script de configuración de escenas -->
-    <script src="scenes.js"></script>
+    <!-- ===== CARGAR ESCENAS (modular por áreas) ===== -->
+    <!-- Orden importante: primero las áreas, luego el index que las combina -->
+    <script src="scenes/area1-entrada-pinos.js"></script>
+    <script src="scenes/estacionamiento-bibl.js"></script>
+    <!-- Aquí irán más áreas conforme se agreguen: area2, area3, etc. -->
+    <script src="scenes/index.js"></script>
     
     <!-- Script de la aplicación -->
     <script src="app.js"></script>
