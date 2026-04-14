@@ -1,62 +1,72 @@
 const area2Estacionamiento = {
     8: {
+        slug: 'estacionamiento-entrada',
         image: 'IA fotos/estacionamiento-biblioteca/1.PHOTOSPHERE.jpg',
-        nextDestination: 9,                  // El botón NEXT lleva a escena 9
+        nextDestination: 'estacionamiento-2',                  // Slug: siguiente
         nextPos: '-14.212 1.5 8.9',            // Posición del botón NEXT
-        prevDestination: 4,                  // PREV va a escena 4 en lugar de 7
+        nextRotation: '-46.261 120.859 -10.935',    // (Opcional) Rotación del botón NEXT
+        prevDestination: 'entrada-pinos-4',                  // Slug: vuelve a entrada pinos 4
         prevPos: '13.867 1.5 2.287',            // Posición del botón PREV
+        prevRotation: '-28.339 -63.288 -12.217',    // (Opcional) Rotación del botón PREV
         extraButtons: [],
         infoPoints: []
     },
     9: {
+        slug: 'estacionamiento-2',
         image: 'IA fotos/estacionamiento-biblioteca/2.PHOTOSPHERE.jpg',
-        nextDestination: 10,                  // El botón NEXT lleva a escena 10
+        nextDestination: 'estacionamiento-3',                  // Slug: a escena 3
         nextPos: '-13 0.500 1.382',     // Botón adelante
         prevPos: null,                       // PREV se calcula automático (-13.264 0.500 0.508)
         extraButtons: [],
         infoPoints: []
     },
     10: {
+        slug: 'estacionamiento-3',
         image: 'IA fotos/estacionamiento-biblioteca/3.PHOTOSPHERE.jpg',
-        nextDestination: 11,
+        nextDestination: 'estacionamiento-4',
         nextPos: '-10.241 -0.680 -14.045',
         prevPos: '13.5 0.500 0.314',                  
         extraButtons: [],
         infoPoints: []
     },
     11: {
+        slug: 'estacionamiento-4',
         image: 'IA fotos/estacionamiento-biblioteca/4.PHOTOSPHERE.jpg',
-        nextDestination: 12,
+        nextDestination: 'estacionamiento-5',
         nextPos: '-13.703 0.374 0.328',
         prevPos: '11.483 -2.038 11.473',               
         extraButtons: [],
         infoPoints: []
     },
     12: {
+        slug: 'estacionamiento-5',
         image: 'IA fotos/estacionamiento-biblioteca/5.PHOTOSPHERE.jpg',
-        nextDestination: 13,
+        nextDestination: 'estacionamiento-6',
         nextPos: '-13.5 0.500 0.429',
         prevPos: null,      
         extraButtons: [],
         infoPoints: []
     },
     13: {
+        slug: 'estacionamiento-6',
         image: 'IA fotos/estacionamiento-biblioteca/6.PHOTOSPHERE.jpg',
-        nextDestination: 14,
+        nextDestination: 'estacionamiento-7',
         nextPos: '-13.5 0.500 0.429',
         prevPos: null,                      
         extraButtons: [],
         infoPoints: []
     },
     14: {
+        slug: 'estacionamiento-7',
         image: 'IA fotos/estacionamiento-biblioteca/7.PHOTOSPHERE.jpg',
-        nextDestination: 15,
+        nextDestination: 'estacionamiento-8',
         nextPos: '-13.5 0.500 0.429',
         prevPos: '13.262 -2.928 -7.908',
         extraButtons: [],
         infoPoints: []
     },
     15: {
+        slug: 'estacionamiento-8',
         image: 'IA fotos/estacionamiento-biblioteca/8.PHOTOSPHERE.jpg',
         nextDestination: null,
         nextPos: '-13.5 0.500 0.429',

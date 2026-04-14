@@ -8,13 +8,16 @@
      image: 'ruta/imagen.jpg',           // Imagen panorámica 360°
      nextDestination: número,             // Escena a la que lleva el botón NEXT (null = no hay)
      nextPos: 'x y z',                    // Posición del botón NEXT en el espacio 3D
+     nextRotation: 'x y z',               // (Opcional) Rotación del botón NEXT
      prevDestination: número | undefined, // Escena a la que lleva el botón PREV
                                           // - Si NO se especifica: usa currentLocation - 1 (escena anterior)
                                           // - Si se especifica: va a esa escena exacta (útil para saltar entre áreas)
      prevPos: 'x y z' | null,            // Posición del botón PREV
                                           // - Si es null: se calcula automático a 180° de nextPos
                                           // - Si tiene valor: usa esa posición exacta
+     prevRotation: 'x y z',               // (Opcional) Rotación del botón PREV
      extraButtons: [ {...}, {...} ],      // Botones adicionales (ej: accesos directos)
+                                          // - Cada botón: {destination, pos, color, rotation (opcional)}
      infoPoints: [ {...}, {...} ]         // Puntos informativos interactivos
    }
    
@@ -22,8 +25,10 @@
    {
      nextDestination: 2,
      nextPos: '14.75 1.009 -1.036',     // ← NEXT aquí
+     nextRotation: '-46.261 120.859 -10.935',  // ← Rotación custom del NEXT (opcional)
      prevDestination: undefined,        // ← PREV va automático a escena 1 (currentLocation - 1)
      prevPos: null,                      // ← Posición calculada automático a 180°
+     prevRotation: '-28.339 -63.288 -12.217',  // ← Rotación custom del PREV (opcional)
    }
    
    EJEMPLO: SALTAR A OTRA ÁREA
@@ -50,15 +55,17 @@ const area1EntradaPinos = {
     // Botones: NEXT (hacia escena 2) + EXTRA (acceso directo a capilla)
     // ═════════════════════════════════════════════════════════
     1: {
+        slug: 'entrada-principal',
         image: 'IA fotos/entrada-pinos/1.PHOTOSPHERE.jpg',
-        nextDestination: 2,                  // El botón NEXT lleva a escena 2
+        nextDestination: 'entrada-pinos-2',                  // Slug: segunda escena de entrada
         nextPos: '14.75 1.009 -1.036',      // Posición del botón NEXT a la derecha
         prevPos: null,                       // Primera escena: no hay botón atrás
         extraButtons: [
             {
-                destination: 3,                  // Salto directo a escena 3 (capilla)
+                destination: 'entrada-capilla',                  // Slug: salto directo a capilla
                 pos: '-15 1.5 -8',              // A la izquierda y lejos
                 color: '#f39c12',               // Color naranja
+                rotation: '-47.609 -52.847 -23.141'  // (Opcional) Rotación del botón
             }
         ],
         infoPoints: [
@@ -79,8 +86,9 @@ const area1EntradaPinos = {
     // Botones: NEXT (siguiente) + PREV automático (atrás a 180°)
     // ═════════════════════════════════════════════════════════
     2: {
+        slug: 'entrada-pinos-2',
         image: 'IA fotos/entrada-pinos/2.PHOTOSPHERE.jpg',
-        nextDestination: 3,                  // NEXT lleva a escena 3
+        nextDestination: 'entrada-posgrado',                  // Slug: a posgrado
         nextPos: '13.264 0.500 -0.508',     // Botón adelante
         prevPos: null,                       // PREV se calcula automático (-13.264 0.500 0.508)
         extraButtons: [],
@@ -88,8 +96,9 @@ const area1EntradaPinos = {
     },
 
     3: {
+        slug: 'entrada-posgrado',
         image: 'IA fotos/entrada-pinos/3.PHOTOSPHERE.jpg',
-        nextDestination: 4,
+        nextDestination: 'entrada-pinos-4',
         nextPos: '13.25 0.500 0.200',
         prevPos: null,                       // PREV automático (-13.25 0.500 -0.200)
         extraButtons: [],
@@ -97,23 +106,26 @@ const area1EntradaPinos = {
     },
     //estacionamiento
     4: {
+        slug: 'entrada-pinos-4',
         image: 'IA fotos/entrada-pinos/4.PHOTOSPHERE.jpg',
-        nextDestination: 5,
-        nextPos: '-14.2 0.113 0.090',
+        nextDestination: 'entrada-pinos-5',
+        nextPos: '-14.2 0.639 0.090',
         prevPos: null,                       // PREV automático (13.493 0.113 -0.090)
         extraButtons: [
             {
-                destination: 8,                  // Salto directo a escena 8 (estacionamiento)
+                destination: 'estacionamiento-entrada',                  // Slug: salto a estacionamiento
                 pos: '-7.07 0.619 13.2',                // A la izquierda y lejos
                 color: '#1234f3',               // Color naranja
+                rotation: '-46.261 120.859 -10.935'  // (Opcional) Rotación del botón
             }
         ],
         infoPoints: []
     },
 
     5: {
+        slug: 'entrada-pinos-5',
         image: 'IA fotos/entrada-pinos/5.PHOTOSPHERE.jpg',
-        nextDestination: 6,
+        nextDestination: 'entrada-pinos-6',
         nextPos: '0.395 0.746 -11.818',
         prevPos: null,                       // PREV automático (-2 1.6 5)
         extraButtons: [],
@@ -121,8 +133,9 @@ const area1EntradaPinos = {
     },
 
     6: {
+        slug: 'entrada-pinos-6',
         image: 'IA fotos/entrada-pinos/6.PHOTOSPHERE.jpg',
-        nextDestination: 7,
+        nextDestination: 'entrada-pinos-7',
         nextPos: '-5 1.6 -1',
         prevPos: null,                       // PREV automático (5 1.6 1)
         extraButtons: [],
@@ -134,6 +147,7 @@ const area1EntradaPinos = {
     // Botones: Solo PREV (explícito) - sin NEXT porque es el final
     // ═════════════════════════════════════════════════════════
     7: {
+        slug: 'entrada-pinos-7',
         image: 'IA fotos/entrada-pinos/7.PHOTOSPHERE.jpg',
         nextDestination: null,               // Sin siguiente (última escena)
         nextPos: null,                       // SIN botón NEXT

@@ -123,7 +123,8 @@ function createButtonsForScene() {
       pos: currentScene.nextPos,
       color: '#1db954',
       icon: '➔',
-      type: 'next'
+      type: 'next',
+      rotation: currentScene.nextRotation || '-46.261 120.859 -10.935'  // Rotación customizable
     });
     buttonIndex++;
   }
@@ -133,7 +134,10 @@ function createButtonsForScene() {
   // 1. Si hay prevDestination explícito, usarlo; si no, calcular prevDestination = currentLocation - 1
   // 2. Luego, usar prevPos explícito o calcular a partir de nextPos
   let prevPosition = null;
-  const prevDestination = currentScene.prevDestination !== undefined ? currentScene.prevDestination : currentLocation - 1;
+  let prevDestination = currentScene.prevDestination !== undefined ? currentScene.prevDestination : currentLocation - 1;
+  
+  // Resolver prevDestination si es un slug
+  prevDestination = resolveDestination(prevDestination) || prevDestination;
   
   if (currentScene.prevPos) {
     // Si hay prevPos explícito, usarlo
@@ -151,7 +155,8 @@ function createButtonsForScene() {
       pos: prevPosition,
       color: '#ff6b6b',
       icon: '⬅',
-      type: 'prev'
+      type: 'prev',
+      rotation: currentScene.prevRotation || '-28.339 -63.288 -12.217'  // Rotación customizable
     });
     buttonIndex++;
   }
@@ -170,18 +175,24 @@ function createButtonsForScene() {
     btnEntity.setAttribute('class', 'clickable');
     btnEntity.setAttribute('data-button-id', index);
     btnEntity.setAttribute('data-button-type', btnConfig.type || 'extra');
-    btnEntity.setAttribute('data-destination', btnConfig.destination);
+    
+    // Resolver el destino (slug → número) para guardarlo
+    const resolvedDestination = resolveDestination(btnConfig.destination) || btnConfig.destination;
+    btnEntity.setAttribute('data-destination', resolvedDestination);
+    
     btnEntity.setAttribute('position', btnConfig.pos);
     
     // Usar modelo glTF en lugar de geometría cilíndrica
     btnEntity.setAttribute('gltf-model', '#arrow-model');
-    btnEntity.setAttribute('scale', '2 2 2');  // Escala mayor para VR (ajusta si necesitas)
+    btnEntity.setAttribute('scale', '6 6 6');
     
-    // Rotar el arrow según el tipo de botón
-    if (btnConfig.type === 'prev') {
-      btnEntity.setAttribute('rotation', '0 180 0');  // Rotar hacia atrás
+    // Aplicar rotación (del config o por defecto según tipo)
+    if (btnConfig.rotation) {
+      btnEntity.setAttribute('rotation', btnConfig.rotation);
+    } else if (btnConfig.type === 'prev') {
+      btnEntity.setAttribute('rotation', '-28.339 -63.288 -12.217');  // Rotación por defecto para prev
     } else {
-      btnEntity.setAttribute('rotation', '0 0 0');  // Next: sin rotación adicional
+      btnEntity.setAttribute('rotation', '-46.261 120.859 -10.935');  // Rotación por defecto para next
     }
     
     // Debug: Log para verificar que se crea
@@ -341,6 +352,7 @@ function calculatePrevPosition(nextPosString) {
 
 /**
  * Navega a una escena específica basado en el botón presionado.
+ * Soporta slugs (textuales) y números para especificar destinos.
  */
 function handleNavigation(button) {
   const destination = button.dataset.destination;
@@ -350,8 +362,10 @@ function handleNavigation(button) {
     return;
   }
   
-  const destinationScene = parseInt(destination);
-  if (scenes[destinationScene]) {
+  // Convertir slug a número si es necesario
+  const destinationScene = parseInt(destination) || resolveDestination(destination);
+  
+  if (destinationScene && scenes[destinationScene]) {
     // ⚡ ANTES de cambiar de escena: Orienta la cámara a la siguiente escena
     const nextScene = scenes[destinationScene];
     if (nextScene && nextScene.nextPos) {
@@ -423,10 +437,10 @@ function setButtonHover(button, isHovering) {
   
   if (isHovering) {
     // Agrandar el modelo
-    button.setAttribute('scale', '2.5 2.5 2.5');
+    button.setAttribute('scale', '7 7 7');
   } else {
     // Volver al tamaño normal
-    button.setAttribute('scale', '2 2 2');
+    button.setAttribute('scale', '6 6 6');
   }
 }
 
