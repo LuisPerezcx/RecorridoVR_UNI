@@ -17,7 +17,13 @@ const area2Estacionamiento = {
         nextDestination: 'estacionamiento-3',                  // Slug: a escena 3
         nextPos: '-13 0.500 1.382',     // Botón adelante
         prevPos: null,                       // PREV se calcula automático (-13.264 0.500 0.508)
-        extraButtons: [],
+        extraButtons: [
+            {
+                destination: 'camino-instituto-1',                  // Slug: salto directo a capilla
+                pos: '0.122 0.934 -11.55',              // A la izquierda y lejos
+                rotation: '-47.609 -164.348 -23.141'  // (Opcional) Rotación del botón
+            }
+        ],
         infoPoints: []
     },
     10: {
@@ -25,7 +31,7 @@ const area2Estacionamiento = {
         image: 'IA fotos/estacionamiento-biblioteca/3.PHOTOSPHERE.jpg',
         nextDestination: 'estacionamiento-4',
         nextPos: '-10.241 -0.680 -14.045',
-        prevPos: '13.5 0.500 0.314',                  
+        prevPos: '13.5 0.500 0.314',
         extraButtons: [],
         infoPoints: []
     },
@@ -34,7 +40,7 @@ const area2Estacionamiento = {
         image: 'IA fotos/estacionamiento-biblioteca/4.PHOTOSPHERE.jpg',
         nextDestination: 'estacionamiento-5',
         nextPos: '-13.703 0.374 0.328',
-        prevPos: '11.483 -2.038 11.473',               
+        prevPos: '11.483 -2.038 11.473',
         extraButtons: [],
         infoPoints: []
     },
@@ -43,7 +49,7 @@ const area2Estacionamiento = {
         image: 'IA fotos/estacionamiento-biblioteca/5.PHOTOSPHERE.jpg',
         nextDestination: 'estacionamiento-6',
         nextPos: '-13.5 0.500 0.429',
-        prevPos: null,      
+        prevPos: null,
         extraButtons: [],
         infoPoints: []
     },
@@ -52,7 +58,7 @@ const area2Estacionamiento = {
         image: 'IA fotos/estacionamiento-biblioteca/6.PHOTOSPHERE.jpg',
         nextDestination: 'estacionamiento-7',
         nextPos: '-13.5 0.500 0.429',
-        prevPos: null,                      
+        prevPos: null,
         extraButtons: [],
         infoPoints: []
     },

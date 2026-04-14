@@ -61,12 +61,7 @@ const area1EntradaPinos = {
         nextPos: '14.75 1.009 -1.036',      // Posición del botón NEXT a la derecha
         prevPos: null,                       // Primera escena: no hay botón atrás
         extraButtons: [
-            {
-                destination: 'entrada-capilla',                  // Slug: salto directo a capilla
-                pos: '-15 1.5 -8',              // A la izquierda y lejos
-                color: '#f39c12',               // Color naranja
-                rotation: '-47.609 -52.847 -23.141'  // (Opcional) Rotación del botón
-            }
+
         ],
         infoPoints: [
             {
@@ -101,7 +96,13 @@ const area1EntradaPinos = {
         nextDestination: 'entrada-pinos-4',
         nextPos: '13.25 0.500 0.200',
         prevPos: null,                       // PREV automático (-13.25 0.500 -0.200)
-        extraButtons: [],
+        extraButtons: [
+            {
+                destination: 'posgrado-1',                  // Slug: salto directo a capilla
+                pos: '0.122 0.934 -11.55',              // A la izquierda y lejos
+                rotation: '-47.609 -164.348 -23.141'  // (Opcional) Rotación del botón
+            }
+        ],
         infoPoints: []
     },
     //estacionamiento
@@ -149,9 +150,8 @@ const area1EntradaPinos = {
     7: {
         slug: 'entrada-pinos-7',
         image: 'IA fotos/entrada-pinos/7.PHOTOSPHERE.jpg',
-        nextDestination: null,               // Sin siguiente (última escena)
-        nextPos: null,                       // SIN botón NEXT
-        prevPos: '5 1.6 1',                 // PREV EXPLÍCITO (porque no hay nextPos para calcularlo)
+        nextDestination: 'camino-instituto-3',               // Sin siguiente (última escena)
+        nextPos: '5 1.6 1',                       // SIN botón NEXT
         extraButtons: [],
         infoPoints: []
     }

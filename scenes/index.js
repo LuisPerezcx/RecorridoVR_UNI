@@ -43,7 +43,9 @@
 function combineScenes() {
   return {
     ...area1EntradaPinos,       // Escenas 1-7
-    ...area2Estacionamiento     // Escenas 8-15
+    ...area2Estacionamiento,     // Escenas 8-15
+    ...posgrado, //16
+    ...camInstituto, //17
     // ...area3OtroLugar,       // Agregar más áreas aquí
   };
 }
