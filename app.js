@@ -4,7 +4,7 @@
    ======================================== */
 
 // ⚙️ CONFIGURACIÓN DE DESARROLLO
-const startingScene = 1;  // CAMBIAR AQUÍ para empezar en otra escena (1-7)
+const startingScene = 8;  // CAMBIAR AQUÍ para empezar en otra escena (1-7)
 
 let currentLocation = startingScene;
 let activeLaser = 'right';  // 'left' o 'right' - controla qué láser está visible

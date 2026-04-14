@@ -3,11 +3,11 @@ const area2Estacionamiento = {
         slug: 'estacionamiento-entrada',
         image: 'IA fotos/estacionamiento-biblioteca/1.PHOTOSPHERE.jpg',
         nextDestination: 'estacionamiento-2',                  // Slug: siguiente
-        nextPos: '-14.212 1.5 8.9',            // Posición del botón NEXT
-        nextRotation: '-46.261 120.859 -10.935',    // (Opcional) Rotación del botón NEXT
+        nextPos: '-13.925 0.593 9.358',            // Posición del botón NEXT
+        nextRotation: '-21.951 -30.990 -10.915',    // (Opcional) Rotación del botón NEXT
         prevDestination: 'entrada-pinos-4',                  // Slug: vuelve a entrada pinos 4
-        prevPos: '13.867 1.5 2.287',            // Posición del botón PREV
-        prevRotation: '-28.339 -63.288 -12.217',    // (Opcional) Rotación del botón PREV
+        prevPos: '12.721 1.009 0.456',            // Posición del botón PREV
+        prevRotation: '-21.941 105.441 -10.915',    // (Opcional) Rotación del botón PREV
         extraButtons: [],
         infoPoints: []
     },
