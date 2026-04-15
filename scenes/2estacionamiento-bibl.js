@@ -65,7 +65,9 @@ const area2Estacionamiento = {
         image: 'IA fotos/estacionamiento-biblioteca/6.PHOTOSPHERE.jpg',
         nextDestination: 'estacionamiento-7',
         nextPos: '-13.5 0.500 0.429',
-        prevPos: null,
+        nextRotation: '-46.471 -54.931 -40.220',
+        prevPos: '13.515 0.050 0.041',
+        prevRotation: '-20.584 68.509 -171.180',
         extraButtons: [],
         infoPoints: []
     },
@@ -73,8 +75,10 @@ const area2Estacionamiento = {
         slug: 'estacionamiento-7',
         image: 'IA fotos/estacionamiento-biblioteca/7.PHOTOSPHERE.jpg',
         nextDestination: 'estacionamiento-8',
-        nextPos: '-13.5 0.500 0.429',
-        prevPos: '13.262 -2.928 -7.908',
+        nextPos: '-13.467 0.127 1.482',
+        nextRotation: '-36.069 -116.068 -154.038',
+        prevPos: '11.384 -2.399 -3.133',
+        prevRotation: '28.805 169.506 -84.276',
         extraButtons: [],
         infoPoints: []
     },
@@ -83,7 +87,8 @@ const area2Estacionamiento = {
         image: 'IA fotos/estacionamiento-biblioteca/8.PHOTOSPHERE.jpg',
         nextDestination: 'biblioteca-1',
         nextPos: '-13.5 0.500 0.429',
-        prevPos: null,
+        prevPos: '13.500 0.500 -0.429',
+        prevRotation: '20.251 15.355 -75.815',
         extraButtons: [],
         infoPoints: []
     },
