@@ -1,5 +1,5 @@
 const posgrado = {
-    16: {
+    17: {
         slug: 'posgrado-1',
         image: 'IA fotos/posgrado/1.PHOTOSPHERE.jpg',
         nextDestination: null,                  // Slug: segunda escena de entrada

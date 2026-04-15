@@ -46,6 +46,8 @@ function combineScenes() {
     ...area2Estacionamiento,     // Escenas 8-15
     ...posgrado, //16
     ...camInstituto, //17
+    ...biblioteca, //
+    ...pasilloA, //
     // ...area3OtroLugar,       // Agregar más áreas aquí
   };
 }
