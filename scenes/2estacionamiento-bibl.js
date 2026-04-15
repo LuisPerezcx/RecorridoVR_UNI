@@ -1,5 +1,5 @@
 const area2Estacionamiento = {
-    8: {
+    9: {
         slug: 'estacionamiento-entrada',
         image: 'IA fotos/estacionamiento-biblioteca/1.PHOTOSPHERE.jpg',
         nextDestination: 'estacionamiento-2',                  // Slug: siguiente
@@ -11,7 +11,7 @@ const area2Estacionamiento = {
         extraButtons: [],
         infoPoints: []
     },
-    9: {
+    10: {
         slug: 'estacionamiento-2',
         image: 'IA fotos/estacionamiento-biblioteca/2.PHOTOSPHERE.jpg',
         nextDestination: 'estacionamiento-3',                  // Slug: a escena 3
@@ -27,7 +27,7 @@ const area2Estacionamiento = {
         ],
         infoPoints: []
     },
-    10: {
+    11: {
         slug: 'estacionamiento-3',
         image: 'IA fotos/estacionamiento-biblioteca/3.PHOTOSPHERE.jpg',
         nextDestination: 'estacionamiento-4',
@@ -38,7 +38,7 @@ const area2Estacionamiento = {
         extraButtons: [],
         infoPoints: []
     },
-    11: {
+    12: {
         slug: 'estacionamiento-4',
         image: 'IA fotos/estacionamiento-biblioteca/4.PHOTOSPHERE.jpg',
         nextDestination: 'estacionamiento-5',
@@ -49,7 +49,7 @@ const area2Estacionamiento = {
         extraButtons: [],
         infoPoints: []
     },
-    12: {
+    13: {
         slug: 'estacionamiento-5',
         image: 'IA fotos/estacionamiento-biblioteca/5.PHOTOSPHERE.jpg',
         nextDestination: 'estacionamiento-6',
@@ -60,7 +60,7 @@ const area2Estacionamiento = {
         extraButtons: [],
         infoPoints: []
     },
-    13: {
+    14: {
         slug: 'estacionamiento-6',
         image: 'IA fotos/estacionamiento-biblioteca/6.PHOTOSPHERE.jpg',
         nextDestination: 'estacionamiento-7',
@@ -71,7 +71,7 @@ const area2Estacionamiento = {
         extraButtons: [],
         infoPoints: []
     },
-    14: {
+    15: {
         slug: 'estacionamiento-7',
         image: 'IA fotos/estacionamiento-biblioteca/7.PHOTOSPHERE.jpg',
         nextDestination: 'estacionamiento-8',
@@ -82,10 +82,10 @@ const area2Estacionamiento = {
         extraButtons: [],
         infoPoints: []
     },
-    15: {
+    16: {
         slug: 'estacionamiento-8',
         image: 'IA fotos/estacionamiento-biblioteca/8.PHOTOSPHERE.jpg',
-        nextDestination: null,
+        nextDestination: 'biblioteca-1',
         nextPos: '-13.5 0.500 0.429',
         prevPos: '13.500 0.500 -0.429',
         prevRotation: '20.251 15.355 -75.815',

@@ -1,5 +1,5 @@
 const camInstituto = {
-    17: {
+    18: {
         slug: 'camino-instituto-1',
         image: 'IA fotos/camino-instituto/1.PHOTOSPHERE.jpg',
         nextDestination: 'camino-instituto-2',
@@ -11,7 +11,7 @@ const camInstituto = {
         extraButtons: [],
         infoPoints: []
     },
-    18: {
+    19: {
         slug: 'camino-instituto-2',
         image: 'IA fotos/camino-instituto/2.PHOTOSPHERE.jpg',
         nextDestination: 'camino-instituto-3',
@@ -19,10 +19,16 @@ const camInstituto = {
         nextRotation: '-32.620 -122.194 -165.196',
         prevPos: '13.238 -0.115 1.242',
         prevRotation: '-35.959 50.644 -159.508',
-        extraButtons: [],
+        extraButtons: [
+            {
+                destination: 'passillo-a-2',                 
+                pos: '2.157 0.201 -11.58',            
+                rotation: '-9.95 -169.064 -13.866'  
+            }
+        ],
         infoPoints: []
     },
-    19: {
+    20: {
         slug: 'camino-instituto-3',
         image: 'IA fotos/camino-instituto/3.PHOTOSPHERE.jpg',
         nextDestination: 'camino-instituto-4',
@@ -32,14 +38,14 @@ const camInstituto = {
         prevRotation: '-22.343 67.504 -173.094',
         extraButtons: [
             {
-                destination: 'entrada-pinos-7',                  // Slug: salto directo a capilla
-                pos: '2.778 0.201 -11.527',              // A la izquierda y lejos
-                rotation: '-21.963 -168.062 -17.488'  // (Opcional) Rotación del botón
+                destination: 'entrada-pinos-7',               
+                pos: '2.157 0.201 -11.58',              
+                rotation: '-9.95 -169.064 -13.866'  
             }
         ],
         infoPoints: []
     },
-    20: {
+    21: {
         slug: 'camino-instituto-4',
         image: 'IA fotos/camino-instituto/4.PHOTOSPHERE.jpg',
         nextDestination: 'camino-instituto-5',
@@ -48,7 +54,7 @@ const camInstituto = {
         extraButtons: [],
         infoPoints: []
     },
-    21: {
+    22: {
         slug: 'camino-instituto-5',
         image: 'IA fotos/camino-instituto/5.PHOTOSPHERE.jpg',
         nextDestination: null,
