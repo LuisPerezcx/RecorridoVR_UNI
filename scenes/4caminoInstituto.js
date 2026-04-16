@@ -49,8 +49,10 @@ const camInstituto = {
         slug: 'camino-instituto-4',
         image: 'IA fotos/camino-instituto/4.PHOTOSPHERE.jpg',
         nextDestination: 'camino-instituto-5',
-        nextPos: '-13.25 0.500 0.200',
-        prevPos: null,
+        nextPos: '-13.260 0.500 -0.474',
+        nextRotation: '-33.445 -117.024 -171.165',
+        prevPos: '13.247 -1.788 0.252',
+        prevRotation: '-42.454 120.350 -21.610',
         extraButtons: [],
         infoPoints: []
     },
