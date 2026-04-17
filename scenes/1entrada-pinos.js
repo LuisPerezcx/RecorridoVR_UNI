@@ -85,7 +85,7 @@ const area1EntradaPinos = {
         nextDestination: 'entrada-posgrado',                  // Slug: a posgrado
         nextPos: '13.309 0.500 0.653',     // Botón adelante
         nextRotation: '-48.291 122.865 -34.317',
-        prevPos: null,                       // PREV se calcula automático (-13.264 0.500 0.508)
+        prevPos: '-13.396 0.623 1.130',                       // PREV se calcula automático (-13.264 0.500 0.508)
         extraButtons: [],
         infoPoints: []
     },
@@ -96,11 +96,11 @@ const area1EntradaPinos = {
         nextDestination: 'entrada-pinos-4',
         nextPos: '13.236 0.500 0.189',
         nextRotation: '-43.881 128.131 -22.887',
-        prevPos: null,                       // PREV automático (-13.25 0.500 -0.200)
+        prevPos: '-13.247 0.344 0.578',                       // PREV automático (-13.25 0.500 -0.200)
         extraButtons: [
             {
                 destination: 'posgrado-1',                  // Slug: salto directo a capilla
-                pos: '0.092 -0.735 -15.008',              // A la izquierda y lejos
+                pos: '0.021 0.145 -15.009',              // A la izquierda y lejos
                 rotation: '-41.970 -152.917 -34.666'  // (Opcional) Rotación del botón
             }
         ],
@@ -111,8 +111,8 @@ const area1EntradaPinos = {
         slug: 'entrada-pinos-4',
         image: 'IA fotos/entrada-pinos/4.PHOTOSPHERE.jpg',
         nextDestination: 'entrada-pinos-5',
-        nextPos: '-14.200 0.639 0.090',
-        nextRotation: '-48.826 -54.273 -24.477',
+        nextPos: '-6.063 0.362 11.789',
+        nextRotation: '-52.004 -6.842 120.284',
         prevPos: null,                       // PREV automático (13.493 0.113 -0.090)
         extraButtons: [
             {
