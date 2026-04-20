@@ -5,7 +5,7 @@
 
 // ⚙️ CONFIGURACIÓN DE DESARROLLO
 // Puede ser un número (índice global) o un slug (recomendado)
-const startingScene = 'camino-aulas-e-2';  // CAMBIAR AQUÍ: usar slug en lugar de número
+const startingScene = 'entrada-principal';  // CAMBIAR AQUÍ: usar slug en lugar de número
 
 let currentLocation = null; // se resuelve desde `startingScene` en la inicialización
 let activeLaser = 'right';  // 'left' o 'right' - controla qué láser está visible
@@ -189,7 +189,7 @@ function createButtonsForScene() {
     
     // Usar modelo glTF en lugar de geometría cilíndrica
     btnEntity.setAttribute('gltf-model', '#arrow-model');
-    btnEntity.setAttribute('scale', '6 6 6');
+    btnEntity.setAttribute('scale', '7.5 7.5 7.5');
     
     // Aplicar rotación (del config o por defecto según tipo)
     if (btnConfig.rotation) {
@@ -459,10 +459,10 @@ function setButtonHover(button, isHovering) {
   
   if (isHovering) {
     // Agrandar el modelo
-    button.setAttribute('scale', '7 7 7');
+    button.setAttribute('scale', '8.5 8.5 8.5');
   } else {
     // Volver al tamaño normal
-    button.setAttribute('scale', '6 6 6');
+    button.setAttribute('scale', '7.5 7.5 7.5');
   }
 }
 
