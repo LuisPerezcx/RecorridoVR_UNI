@@ -1,5 +1,5 @@
 const pasilloA = {
-    28: {
+    1: {
         slug: 'passillo-a-1',
         image: 'IA fotos/pasilloA/1.PHOTOSPHERE.jpg',
         nextDestination: 'passillo-a-2',
@@ -10,7 +10,7 @@ const pasilloA = {
         extraButtons: [],
         infoPoints: []
     },
-    29: {
+    2: {
         slug: 'passillo-a-2',
         image: 'IA fotos/pasilloA/2.PHOTOSPHERE.jpg',
         nextDestination: 'camino-instituto-2',

@@ -41,14 +41,33 @@
  * para resolver referencias automáticamente.
  */
 function combineScenes() {
-  return {
-    ...area1EntradaPinos,       // Escenas 1-7
-    ...area2Estacionamiento,     // Escenas 8-15
-    ...posgrado, //16
-    ...camInstituto, //17
-    ...biblioteca, //
-    // ...area3OtroLugar,       // Agregar más áreas aquí
-  };
+  // Lista de áreas en el orden deseado; agregar nuevas áreas aquí
+  const areas = [
+    area1EntradaPinos,
+    area2Estacionamiento,
+    posgrado,
+    camInstituto,
+    biblioteca,
+    caminoAulasE,
+    pasilloA,
+    pasilloC,
+  ];
+
+  const combined = {};
+  let index = 1;
+
+  // Para cada área, iterar sus escenas en el orden de sus claves numéricas
+  for (const area of areas) {
+    if (!area) continue;
+    const entries = Object.entries(area).sort((a, b) => Number(a[0]) - Number(b[0]));
+    for (const [origKey, sceneData] of entries) {
+      // No mutamos el objeto original: clonamos y añadimos el índice relativo
+      combined[index] = Object.assign({}, sceneData, { originalIndex: Number(origKey) });
+      index++;
+    }
+  }
+
+  return combined;
 }
 
 /**

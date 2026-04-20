@@ -21,9 +21,9 @@ const camInstituto = {
         prevRotation: '-35.959 50.644 -159.508',
         extraButtons: [
             {
-                destination: 'passillo-a-2',                 
-                pos: '2.157 0.201 -11.58',            
-                rotation: '-9.95 -169.064 -13.866'  
+                destination: 'passillo-a-2',
+                pos: '2.157 0.201 -11.58',
+                rotation: '-9.95 -169.064 -13.866'
             }
         ],
         infoPoints: []
@@ -38,9 +38,9 @@ const camInstituto = {
         prevRotation: '-22.343 67.504 -173.094',
         extraButtons: [
             {
-                destination: 'entrada-pinos-7',               
-                pos: '2.157 0.201 -11.58',              
-                rotation: '-9.95 -169.064 -13.866'  
+                destination: 'entrada-pinos-7',
+                pos: '2.157 0.201 -11.58',
+                rotation: '-9.95 -169.064 -13.866'
             }
         ],
         infoPoints: []
@@ -53,7 +53,13 @@ const camInstituto = {
         nextRotation: '-33.445 -117.024 -171.165',
         prevPos: '13.247 -1.788 0.252',
         prevRotation: '-42.454 120.350 -21.610',
-        extraButtons: [],
+        extraButtons: [
+            {
+                destination: 'passillo-c-3',
+                pos: '2.157 0.201 -11.58',
+                rotation: '-9.95 -169.064 -13.866'
+            }
+        ],
         infoPoints: []
     },
     22: {
