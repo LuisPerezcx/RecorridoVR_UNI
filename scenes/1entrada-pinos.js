@@ -111,15 +111,15 @@ const area1EntradaPinos = {
         slug: 'entrada-pinos-4',
         image: 'IA fotos/entrada-pinos/4.PHOTOSPHERE.jpg',
         nextDestination: 'entrada-pinos-5',
-        nextPos: '-6.063 0.362 11.789',
-        nextRotation: '-52.004 -6.842 120.284',
-        prevPos: null,                       // PREV automático (13.493 0.113 -0.090)
+        nextPos: '-23.801 0.725 -2.180',
+        nextRotation: '-59.647 -128.244 -127.904',
+        prevPos: '22.565 0.131 -127.904',                       // PREV automático (13.493 0.113 -0.090)
         extraButtons: [
             {
                 destination: 'estacionamiento-entrada',                  // Slug: salto a estacionamiento
-                pos: '-7.506 -0.066 11.798',                // A la izquierda y lejos
+                pos: '-6.024 -0.568 12.625',                // A la izquierda y lejos
                 color: '#1234f3',               // Color naranja
-                rotation:  '-40.527 15.473 85.623'  // (Opcional) Rotación del botón
+                rotation:  '-51.160 88.450 -109.401'  // (Opcional) Rotación del botón
             }
         ],
         infoPoints: []
@@ -128,14 +128,14 @@ const area1EntradaPinos = {
         slug: 'entrada-pinos-5',
         image: 'IA fotos/entrada-pinos/5.PHOTOSPHERE.jpg',
         nextDestination: 'entrada-pinos-6',
-        nextPos: '0.534 0.349 -10.943',
-        nextRotation: '-37.631 -129.962 -34.572',
-        prevPos: null,                       // PREV automático (-2 1.6 5)
+        nextPos: '-39.037 -2.901 -6.867',
+        nextRotation: '-55.970 -37.532 -54.784',
+        prevPos: '38.973 -5.690 7.113',                       // PREV automático (-2 1.6 5)
         extraButtons: [
             {
                 destination: 'passillo-a-1',               
-                pos: '0.122 0.934 11.55',            
-                rotation: '-47.609 -164.348 -23.141'  
+                pos: '-1.062 -0.077 11.341',            
+                rotation: '-21.217 -28.522 -172.339'  
             }
         ],
         infoPoints: []
