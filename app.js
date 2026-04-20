@@ -4,9 +4,10 @@
    ======================================== */
 
 // ⚙️ CONFIGURACIÓN DE DESARROLLO
-const startingScene = 6;  // CAMBIAR AQUÍ para empezar en otra escena (1-7)
+// Puede ser un número (índice global) o un slug (recomendado)
+const startingScene = 'entrada-principal';  // CAMBIAR AQUÍ: usar slug en lugar de número
 
-let currentLocation = startingScene;
+let currentLocation = null; // se resuelve desde `startingScene` en la inicialización
 let activeLaser = 'right';  // 'left' o 'right' - controla qué láser está visible
 let preloadedSceneData = {};  // Caché para escenas precargadas
 
@@ -65,10 +66,14 @@ function updateScene(skipOrient = false) {
     skybox.setAttribute('src', currentScene.image);
   }
   
-  // Actualizar display de ubicación
+  // Actualizar display de ubicación (mostrar slug y número total dinámico)
   const locationDisplay = document.querySelector('#location-display');
   if (locationDisplay) {
-    locationDisplay.textContent = `${currentLocation}/7`;
+    const totalScenes = Object.keys(scenes).length;
+    const sceneSlug = currentScene && currentScene.slug ? currentScene.slug : `Escena ${currentLocation}`;
+    // Mostrar índice relativo (originalIndex) si existe, si no usar el índice global
+    const relativeIndex = currentScene && currentScene.originalIndex ? currentScene.originalIndex : currentLocation;
+    locationDisplay.textContent = `${sceneSlug} — ${relativeIndex}`;
   }
   
   // Generar botones dinámicamente
@@ -184,7 +189,7 @@ function createButtonsForScene() {
     
     // Usar modelo glTF en lugar de geometría cilíndrica
     btnEntity.setAttribute('gltf-model', '#arrow-model');
-    btnEntity.setAttribute('scale', '6 6 6');
+    btnEntity.setAttribute('scale', '7.5 7.5 7.5');
     
     // Aplicar rotación (del config o por defecto según tipo)
     if (btnConfig.rotation) {
@@ -351,6 +356,23 @@ function calculatePrevPosition(nextPosString) {
 }
 
 /**
+ * Resuelve el valor de `startingScene` que puede ser slug, número o string-numero
+ * Devuelve un número de escena válido (fallback = 1)
+ */
+function resolveStartScene(ref) {
+  if (ref === null || ref === undefined) return 1;
+  if (typeof ref === 'number') return ref;
+  const parsed = parseInt(ref);
+  if (!isNaN(parsed)) return parsed;
+  if (typeof resolveDestination === 'function') {
+    const resolved = resolveDestination(ref);
+    if (resolved) return resolved;
+  }
+  console.warn('⚠️ startingScene no válido, usando 1 como fallback:', ref);
+  return 1;
+}
+
+/**
  * Navega a una escena específica basado en el botón presionado.
  * Soporta slugs (textuales) y números para especificar destinos.
  */
@@ -437,10 +459,10 @@ function setButtonHover(button, isHovering) {
   
   if (isHovering) {
     // Agrandar el modelo
-    button.setAttribute('scale', '7 7 7');
+    button.setAttribute('scale', '8.5 8.5 8.5');
   } else {
     // Volver al tamaño normal
-    button.setAttribute('scale', '6 6 6');
+    button.setAttribute('scale', '7.5 7.5 7.5');
   }
 }
 
@@ -500,6 +522,8 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // ===== INICIALIZAR ESCENA =====
   
+  // Resolver `startingScene` (puede ser slug o número) antes de inicializar
+  currentLocation = resolveStartScene(startingScene);
   updateScene();
   setActiveLaser('right');  // Láser derecho activo al inicio
   

@@ -59,7 +59,7 @@ const area1EntradaPinos = {
         image: 'IA fotos/entrada-pinos/1.PHOTOSPHERE.jpg',
         nextDestination: 'entrada-pinos-2',                  // Slug: segunda escena de entrada
         nextPos: '14.877 1.023 -0.486',   // Posición del botón NEXT a la derecha
-        nextRotation: '-41.150 118.953 -20.215',    
+        nextRotation: '-41.150 118.953 -20.215',
         prevPos: null,                       // Primera escena: no hay botón atrás
         extraButtons: [],
         infoPoints: [
@@ -146,7 +146,13 @@ const area1EntradaPinos = {
         nextDestination: 'entrada-pinos-7',
         nextPos: '0.395 0.746 -11.818',
         prevPos: null,                       // PREV automático (-2 1.6 5)
-        extraButtons: [],
+        extraButtons: [
+            {
+                destination: 'camino-aulas-e-1',
+                pos: '11.37 0.477 -11.55',
+                rotation: '47.609 -164.348 23.141'
+            }
+        ],
         infoPoints: []
     },
 
