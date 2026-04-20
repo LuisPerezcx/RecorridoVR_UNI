@@ -17,7 +17,8 @@ const area2Estacionamiento = {
         nextDestination: 'estacionamiento-3',                  // Slug: a escena 3
         nextPos: '-13.082 0.214 0.894', 
         nextRotation: '-18.069 -99.932 -177.858',    // Botón adelante
-        prevPos: null,                       // PREV se calcula automático (-13.264 0.500 0.508)
+        prevPos: '13.097 0.214 -0.682',  
+        prevRotation: '-22.881 67.911 -171.905',    // (Opcional) Rotación del botón PREV
         extraButtons: [
             {
                 destination: 'camino-instituto-1',                  // Slug: salto directo a capilla
@@ -87,6 +88,7 @@ const area2Estacionamiento = {
         image: 'IA fotos/estacionamiento-biblioteca/8.PHOTOSPHERE.jpg',
         nextDestination: 'biblioteca-1',
         nextPos: '-13.5 0.500 0.429',
+        nextRotation: '-31.948 -55.862 -16.096',
         prevPos: '13.500 0.500 -0.429',
         prevRotation: '20.251 15.355 -75.815',
         extraButtons: [],
