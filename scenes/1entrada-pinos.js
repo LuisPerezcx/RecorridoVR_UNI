@@ -96,7 +96,7 @@ const area1EntradaPinos = {
         nextDestination: 'entrada-pinos-4',
         nextPos: '13.236 0.500 0.189',
         nextRotation: '-43.881 128.131 -22.887',
-        prevPos: '-19.594 -0.823 0.487',                       // PREV automático (-13.25 0.500 -0.200)
+        prevPos: '-15.606 -1.161 0.544',                       // PREV automático (-13.25 0.500 -0.200)
         prevRotation: '-28.339 -63.288 -12.217',
         extraButtons: [
             {
@@ -112,14 +112,14 @@ const area1EntradaPinos = {
         slug: 'entrada-pinos-4',
         image: 'IA fotos/entrada-pinos/4.PHOTOSPHERE.jpg',
         nextDestination: 'entrada-pinos-5',
-        nextPos: '-21.942 0.091 -3.116',
-        nextRotation: '-59.647 -128.244 -127.914',
-        prevPos: '21.332 -0.663 0.244',                       // PREV automático (13.493 0.113 -0.090)
-        prevRotation: '-29.089 62.028 -158.712',
+        nextPos: '-8.316 0.877 -1.135',
+        nextRotation: '-59.687 -128.244 -127.914',
+        prevPos: '7.590 0.280 0.320',                       // PREV automático (13.493 0.113 -0.090)
+        prevRotation: '-29.099 62.028 -158.722',
         extraButtons: [
             {
                 destination: 'estacionamiento-entrada',                  // Slug: salto a estacionamiento
-                pos: '-6.024 -0.568 12.625',                // A la izquierda y lejos
+                pos: '-4.458 0.170 8.637',                // A la izquierda y lejos
                 color: '#1234f3',               // Color naranja
                 rotation:  '-51.160 88.450 -109.401'  // (Opcional) Rotación del botón
             }
@@ -130,15 +130,15 @@ const area1EntradaPinos = {
         slug: 'entrada-pinos-5',
         image: 'IA fotos/entrada-pinos/5.PHOTOSPHERE.jpg',
         nextDestination: 'entrada-pinos-6',
-        nextPos: '-23.871 -1.895 -3.708',
+        nextPos: '-9.304 0.071 -1.372',
         nextRotation: '-43.476 -69.012 -40.630',
-        prevPos: '18.460 -2.770 3.823',
+        prevPos: '11.259 -1.009 1.897',
         prevRotation: '-38.539 52.296 -147.993',                       // PREV automático (-2 1.6 5)
         extraButtons: [
             {
                 destination: 'passillo-a-1',               
-                pos: '-1.062 -0.077 11.341',            
-                rotation: '-21.217 -28.522 -172.339'  
+                pos: '-0.767 0.342 9.364',            
+                rotation: '-21.207 -28.522 -172.339'  
             }
         ],
         infoPoints: []
