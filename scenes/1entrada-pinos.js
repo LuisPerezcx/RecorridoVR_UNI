@@ -96,7 +96,8 @@ const area1EntradaPinos = {
         nextDestination: 'entrada-pinos-4',
         nextPos: '13.236 0.500 0.189',
         nextRotation: '-43.881 128.131 -22.887',
-        prevPos: '-13.247 0.344 0.578',                       // PREV automático (-13.25 0.500 -0.200)
+        prevPos: '-19.594 -0.823 0.487',                       // PREV automático (-13.25 0.500 -0.200)
+        prevRotation: '-28.339 -63.288 -12.217',
         extraButtons: [
             {
                 destination: 'posgrado-1',                  // Slug: salto directo a capilla
@@ -111,9 +112,10 @@ const area1EntradaPinos = {
         slug: 'entrada-pinos-4',
         image: 'IA fotos/entrada-pinos/4.PHOTOSPHERE.jpg',
         nextDestination: 'entrada-pinos-5',
-        nextPos: '-23.801 0.725 -2.180',
-        nextRotation: '-59.647 -128.244 -127.904',
-        prevPos: '22.565 0.131 -127.904',                       // PREV automático (13.493 0.113 -0.090)
+        nextPos: '-21.942 0.091 -3.116',
+        nextRotation: '-59.647 -128.244 -127.914',
+        prevPos: '21.332 -0.663 0.244',                       // PREV automático (13.493 0.113 -0.090)
+        prevRotation: '-29.089 62.028 -158.712',
         extraButtons: [
             {
                 destination: 'estacionamiento-entrada',                  // Slug: salto a estacionamiento
@@ -128,9 +130,10 @@ const area1EntradaPinos = {
         slug: 'entrada-pinos-5',
         image: 'IA fotos/entrada-pinos/5.PHOTOSPHERE.jpg',
         nextDestination: 'entrada-pinos-6',
-        nextPos: '-39.037 -2.901 -6.867',
-        nextRotation: '-55.970 -37.532 -54.784',
-        prevPos: '38.973 -5.690 7.113',                       // PREV automático (-2 1.6 5)
+        nextPos: '-23.871 -1.895 -3.708',
+        nextRotation: '-43.476 -69.012 -40.630',
+        prevPos: '18.460 -2.770 3.823',
+        prevRotation: '-38.539 52.296 -147.993',                       // PREV automático (-2 1.6 5)
         extraButtons: [
             {
                 destination: 'passillo-a-1',               
@@ -144,13 +147,14 @@ const area1EntradaPinos = {
         slug: 'entrada-pinos-6',
         image: 'IA fotos/entrada-pinos/6.PHOTOSPHERE.jpg',
         nextDestination: 'entrada-pinos-7',
-        nextPos: '0.395 0.746 -11.818',
-        prevPos: null,                       // PREV automático (-2 1.6 5)
+        nextPos: '-0.455 0.727 -11.856',
+        nextRotation: '-28.935 -141.883 -12.955',
+        prevPos: '-13.899 -1.146 0.831',                       // PREV automático (-2 1.6 5)
         extraButtons: [
             {
                 destination: 'camino-aulas-e-1',
-                pos: '11.37 0.477 -11.55',
-                rotation: '47.609 -164.348 23.141'
+                pos: '11.599 0.477 -5.596',
+                rotation: '-25.857 122.938 -6.709'
             }
         ],
         infoPoints: []
@@ -160,8 +164,10 @@ const area1EntradaPinos = {
         slug: 'entrada-pinos-7',
         image: 'IA fotos/entrada-pinos/7.PHOTOSPHERE.jpg',
         nextDestination: 'entrada-pinos-8',
-        nextPos: '-5 1.6 -1',
-        prevPos: null,                       // PREV automático (5 1.6 1)
+        nextPos: '-5.150 1.224 -0.084',
+        nextRotation: '-61.551 -139.330 -130.929',
+        prevPos: '5.107 1.418 0.870',                       // PREV automático (5 1.6 1)
+        prevRotation: '-26.512 61.647 -165.358', 
         extraButtons: [],
         infoPoints: []
     },
@@ -174,7 +180,10 @@ const area1EntradaPinos = {
         slug: 'entrada-pinos-8',
         image: 'IA fotos/entrada-pinos/8.PHOTOSPHERE.jpg',
         nextDestination: 'camino-instituto-3',               // Sin siguiente (última escena)
-        nextPos: '5 1.6 1',                       // SIN botón NEXT
+        nextPos: '5.274 0.966 -0.370',                       // SIN botón NEXT
+        nextRotation: '-54.548 138.965 -24.457',
+        prevPos: '-5.158 1.329 -0.208',                       // PREV automático (5 1.6 1)
+        prevRotation: '-26.043 -57.081 -10.470',
         extraButtons: [],
         infoPoints: []
     }
