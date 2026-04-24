@@ -147,14 +147,15 @@ const area1EntradaPinos = {
         slug: 'entrada-pinos-6',
         image: 'IA fotos/entrada-pinos/6.PHOTOSPHERE.jpg',
         nextDestination: 'entrada-pinos-7',
-        nextPos: '-0.455 0.727 -11.856',
-        nextRotation: '-28.935 -141.883 -12.955',
-        prevPos: '-13.899 -1.146 0.831',                       // PREV automático (-2 1.6 5)
+        nextPos: '0.173 0.727 -10.135',
+        nextRotation: '-28.935 -147.378 -12.955',
+        prevPos: '-11.059 -0.391 0.923', 
+        prevRotation: '-28.339 -63.288 -12.217',                      // PREV automático (-2 1.6 5)
         extraButtons: [
             {
                 destination: 'camino-aulas-e-1',
-                pos: '11.599 0.477 -5.596',
-                rotation: '-25.857 122.938 -6.709'
+                pos: '8.997 0.477 -4.428',
+                rotation: '-25.867 131.243 -6.709'
             }
         ],
         infoPoints: []
@@ -164,10 +165,10 @@ const area1EntradaPinos = {
         slug: 'entrada-pinos-7',
         image: 'IA fotos/entrada-pinos/7.PHOTOSPHERE.jpg',
         nextDestination: 'entrada-pinos-8',
-        nextPos: '-5.150 1.224 -0.084',
-        nextRotation: '-61.551 -139.330 -130.929',
-        prevPos: '5.107 1.418 0.870',                       // PREV automático (5 1.6 1)
-        prevRotation: '-26.512 61.647 -165.358', 
+        nextPos: '-9.042 0.693 -0.346',
+        nextRotation: '-59.444 -142.459 -127.335',
+        prevPos: '8.940 0.755 1.181',                       // PREV automático (5 1.6 1)
+        prevRotation: '-27.864 62.143 -170.116', 
         extraButtons: [],
         infoPoints: []
     },
@@ -180,10 +181,10 @@ const area1EntradaPinos = {
         slug: 'entrada-pinos-8',
         image: 'IA fotos/entrada-pinos/8.PHOTOSPHERE.jpg',
         nextDestination: 'camino-instituto-3',               // Sin siguiente (última escena)
-        nextPos: '5.274 0.966 -0.370',                       // SIN botón NEXT
-        nextRotation: '-54.548 138.965 -24.457',
-        prevPos: '-5.158 1.329 -0.208',                       // PREV automático (5 1.6 1)
-        prevRotation: '-26.043 -57.081 -10.470',
+        nextPos: '8.577 0.223 -0.640',                       // SIN botón NEXT
+        nextRotation: '-52.648 133.542 -27.621',
+        prevPos: '-8.666 -0.349 -0.774',                       // PREV automático (5 1.6 1)
+        prevRotation: '-24.331 -63.573 -15.366',
         extraButtons: [],
         infoPoints: []
     }
