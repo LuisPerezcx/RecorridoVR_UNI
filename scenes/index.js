@@ -51,6 +51,7 @@ function combineScenes() {
     caminoAulasE,
     pasilloA,
     pasilloC,
+    caminoSalas,
   ];
 
   const combined = {};
