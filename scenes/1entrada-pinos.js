@@ -93,7 +93,7 @@ const area1EntradaPinos = {
     3: {
         slug: 'entrada-posgrado',
         image: 'IA fotos/entrada-pinos/3.PHOTOSPHERE.jpg',
-        nextDestination: 'entrada-pinos-4',
+        nextDestination: 'entrada-pinos-3',
         nextPos: '13.236 0.500 0.189',
         nextRotation: '-43.881 128.131 -22.887',
         prevPos: '-15.606 -1.161 0.544',                       // PREV automático (-13.25 0.500 -0.200)
@@ -107,8 +107,25 @@ const area1EntradaPinos = {
         ],
         infoPoints: []
     },
-    //estacionamiento
     4: {
+        slug: 'entrada-pinos-3',
+        image: 'IA fotos/entrada-pinos/9.PHOTOSPHERE.jpg',
+        nextDestination: 'entrada-pinos-4',
+        nextPos: '-8.316 0.877 -1.135',
+        nextRotation: '-59.687 -128.244 -127.914',
+        prevPos: '7.590 0.280 0.320',                       // PREV automático (13.493 0.113 -0.090)
+        prevRotation: '-29.099 62.028 -158.722',
+        extraButtons: [
+            {
+                destination: 'camino-aulas-e-15',                  // Slug: salto a estacionamiento
+                pos: '-1.516 0.170 -11.917',                // A la izquierda y lejos
+                rotation:  '-51.160 88.450 -109.401'  // (Opcional) Rotación del botón
+            }
+        ],
+        infoPoints: []
+    },
+    //estacionamiento
+    5: {
         slug: 'entrada-pinos-4',
         image: 'IA fotos/entrada-pinos/4.PHOTOSPHERE.jpg',
         nextDestination: 'entrada-pinos-5',
@@ -126,7 +143,7 @@ const area1EntradaPinos = {
         ],
         infoPoints: []
     },
-    5: {
+    6: {
         slug: 'entrada-pinos-5',
         image: 'IA fotos/entrada-pinos/5.PHOTOSPHERE.jpg',
         nextDestination: 'entrada-pinos-6',
@@ -143,7 +160,7 @@ const area1EntradaPinos = {
         ],
         infoPoints: []
     },
-    6: {
+    7: {
         slug: 'entrada-pinos-6',
         image: 'IA fotos/entrada-pinos/6.PHOTOSPHERE.jpg',
         nextDestination: 'entrada-pinos-7',
@@ -161,7 +178,7 @@ const area1EntradaPinos = {
         infoPoints: []
     },
 
-    7: {
+    8: {
         slug: 'entrada-pinos-7',
         image: 'IA fotos/entrada-pinos/7.PHOTOSPHERE.jpg',
         nextDestination: 'entrada-pinos-8',
@@ -177,7 +194,7 @@ const area1EntradaPinos = {
     // ESCENA 7: ÚLTIMA UBICACIÓN (FIN DEL RECORRIDO)
     // Botones: Solo PREV (explícito) - sin NEXT porque es el final
     // ═════════════════════════════════════════════════════════
-    8: {
+    9: {
         slug: 'entrada-pinos-8',
         image: 'IA fotos/entrada-pinos/8.PHOTOSPHERE.jpg',
         nextDestination: 'camino-instituto-3',               // Sin siguiente (última escena)
