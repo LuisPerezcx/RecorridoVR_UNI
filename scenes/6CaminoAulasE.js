@@ -104,14 +104,15 @@ const caminoAulasE = {
         slug: 'camino-aulas-e-9',
         image: 'IA fotos/caminoAulasE/9.PHOTOSPHERE.jpg',
         nextDestination: "camino-aulas-e-10",
-        nextPos: '-7.5 -0.500 3.03',
+        nextPos: '-9.24231 0.0777 0.16802',
+        nextRotation: '-12.13639201 -130.583957 -162.300608',
         prevPos: '7.969 -0.500 -1.870',
         prevRotation: '-13.849 100.482 178.814',
         extraButtons: [
             {
                 destination: 'labs-biologia-1',
-                pos: '-2.485 -0.327 11.263',
-                rotation: '-20.773 13.747 -6.842'
+                pos: '-0.49669 -1.27169 9.39575',
+                rotation: '-16.57395 34.5006536'
             }
         ],
         infoPoints: []
@@ -120,7 +121,8 @@ const caminoAulasE = {
         slug: 'camino-aulas-e-10',
         image: 'IA fotos/caminoAulasE/10.PHOTOSPHERE.jpg',
         nextDestination: "camino-aulas-e-11",
-        nextPos: '-7.5 -0.500 3.03',
+        nextPos: '-7.587 0.18876 1.04475',
+        nextRotation: '-17.38353 -124.049373 -167.0744930',
         prevPos: '7.969 -0.500 -1.870',
         prevRotation: '-13.849 100.482 178.814',
         extraButtons: [],
@@ -130,14 +132,15 @@ const caminoAulasE = {
         slug: 'camino-aulas-e-11',
         image: 'IA fotos/caminoCafe/5.PHOTOSPHERE.jpg',
         nextDestination: "camino-aulas-e-12",
-        nextPos: '-13.260 0.500 -0.474',
-        prevPos: '7.5 -0.500 -3.03',
-        prevRotation: '-6.7 79.6 -171',
+        nextPos: '-9.29378 0.24125 -0.55202',
+        nextRotation: '-20.8900412 -103.0258329 177.9148545',
+        prevPos: '7.44865 -0.5 -1.59319',
+        prevRotation: '-34.991678 132.837400 -29.1549574',
         extraButtons: [
             {
                 destination: 'camino-cafe-1',
-                pos: '-2.485 -0.327 11.263',
-                rotation: '-20.773 13.747 -6.842'
+                pos: '-0.45981 -0.47675 7.90443',
+                rotation: '-4.335571 50.45237 -22.8615889'
             }
         ],
         infoPoints: []
