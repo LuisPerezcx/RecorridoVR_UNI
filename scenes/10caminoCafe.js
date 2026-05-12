@@ -15,9 +15,10 @@ const caminoCafe = {
         slug: 'camino-cafe-2',
         image: 'IA fotos/caminoCafe/7.PHOTOSPHERE.jpg',
         nextDestination: 'camino-cafe-3',
-        nextPos: '-13.260 0.500 -0.474',
-        prevPos: '7.5 -0.500 -3.03',
-        prevRotation: '-6.7 79.6 -171',
+        nextPos: '-8.37309 0.52767 -0.90616',
+        nextRotation: '-33.32093353 -125.41702360 -170.11518',
+        prevPos: '6.75155 0.52531 -4.30335',
+        prevRotation: '-26.5531560 104.1287767 -170.99810804',
         extraButtons: [],
         infoPoints: []
     },
@@ -26,8 +27,8 @@ const caminoCafe = {
         image: 'IA fotos/caminoCafe/8.PHOTOSPHERE.jpg',
         nextDestination: null,
         prevDestination: 'camino-cafe-2',
-        prevPos: '-0.089 1.445 12.879',
-        prevRotation: '-6.7 79.6 -171',
+        prevPos: '-0.21865 0.48566 10.08299',
+        prevRotation: '-43.578596 -31.01497 -153.825417',
         extraButtons: [],
         infoPoints: []
     }
