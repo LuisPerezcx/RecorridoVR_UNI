@@ -113,13 +113,13 @@ const area1EntradaPinos = {
         nextDestination: 'entrada-pinos-4',
         nextPos: '-8.316 0.877 -1.135',
         nextRotation: '-59.687 -128.244 -127.914',
-        prevPos: '7.590 0.280 0.320',                       // PREV automático (13.493 0.113 -0.090)
-        prevRotation: '-29.099 62.028 -158.722',
+        prevPos: '11.17117 -0.0665 0.0916',                       // PREV automático (13.493 0.113 -0.090)
+        prevRotation: '-30.948888 62.58074221 -163.530176',
         extraButtons: [
             {
                 destination: 'camino-aulas-e-15',                  // Slug: salto a estacionamiento
-                pos: '-1.516 0.170 -11.917',                // A la izquierda y lejos
-                rotation:  '-51.160 88.450 -109.401'  // (Opcional) Rotación del botón
+                pos: '-6.54895 0.70819 -11.13195',                // A la izquierda y lejos
+                rotation:  '-25.83294810 166.41387272 -154.424157'  // (Opcional) Rotación del botón
             }
         ],
         infoPoints: []
