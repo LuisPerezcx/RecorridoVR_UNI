@@ -5,7 +5,7 @@
 
 // ⚙️ CONFIGURACIÓN DE DESARROLLO
 // Puede ser un número (índice global) o un slug (recomendado)
-const startingScene = 'passillo-c-1';  // CAMBIAR AQUÍ: usar slug en lugar de número
+const startingScene = 'camino-aulas-e-15';  // CAMBIAR AQUÍ: usar slug en lugar de número
 
 let currentLocation = null; // se resuelve desde `startingScene` en la inicialización
 let activeLaser = 'right';  // 'left' o 'right' - controla qué láser está visible
