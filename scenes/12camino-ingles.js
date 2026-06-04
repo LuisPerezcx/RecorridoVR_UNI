@@ -1,0 +1,83 @@
+const caminoIngles = {
+    1: {
+        slug: 'camino-ingles-1',
+        image: 'IA fotos/camino-ingles/1.PHOTOSPHERE.jpg',
+        nextDestination: 'camino-ingles-2',
+        prevDestination: 'camino-salas-1',
+        nextPos: '-12.5357 -0.44547 12.01129',
+        prevPos: '6.772 0.952 0.078',
+        nextRotation: '-34.3 -89.5 -166.9',
+        prevRotation: '-39.3484 64.77230 -172.83443',
+    },
+    2: {
+        slug: 'camino-ingles-2',
+        image: 'IA fotos/camino-ingles/2.PHOTOSPHERE.jpg',
+        nextDestination: "camino-ingles-3",
+        prevDestination: 'camino-ingles-1',
+        nextPos: '-12.5357 -0.44547 12.01129',
+        nextRotation: '-34.3 -89.5 -166.9',
+    },
+    3: {
+        slug: 'camino-ingles-3',
+        image: 'IA fotos/camino-ingles/3.PHOTOSPHERE.jpg',
+        nextDestination: "camino-ingles-4",
+        prevDestination: 'camino-ingles-2',
+        nextPos: '-12.5357 -0.8 12.01129',
+        nextRotation: '-34.3 -89.5 -166.9',
+        prevPos: '12.5357 -0.44547 -12.01129',
+        prevRotation: '-34.3 -89.5 -166.9',
+    },
+    4: {
+        slug: 'camino-ingles-4',
+        image: 'IA fotos/camino-ingles/4.PHOTOSPHERE.jpg',
+        nextDestination: "camino-ingles-5",
+        prevDestination: 'camino-ingles-3',
+        nextPos: '-12.5357 -0.44547 12.01129',
+        nextRotation: '-34.3 -89.5 -166.9',
+        prevPos: '12.5357 -0.2 -12.01129',
+        prevRotation: '-34.3 -89.5 -166.9',
+        extraButtons: [
+            {
+                destination: 'camino-salas-5',
+                pos: '2.157 0.201 -11.58',
+                rotation: '-9.95 -169.064 -13.866'
+            }
+        ],
+    },
+    5: {
+        slug: 'camino-ingles-5',
+        image: 'IA fotos/camino-ingles/5.PHOTOSPHERE.jpg',
+        nextDestination: "camino-ingles-6",
+        nextPos: '-12.5357 -0.44547 12.01129',
+        nextRotation: '-34.3 -89.5 -166.9',
+        prevPos: '12.5357 -0.44547 -12.01129',
+        prevRotation: '-34.3 -89.5 -166.9',
+    },
+    6: {
+        slug: 'camino-ingles-6',
+        image: 'IA fotos/camino-ingles/6.PHOTOSPHERE.jpg',
+        nextDestination: "camino-ingles-7",
+        nextPos: '-12.5357 -0.44547 12.01129',
+        nextRotation: '-34.3 -89.5 -166.9',
+        prevPos: '12.5357 -0.44547 -12.01129',
+        prevRotation: '-34.3 -89.5 -166.9',
+    },
+    7: {
+        slug: 'camino-ingles-7',
+        image: 'IA fotos/camino-ingles/7.PHOTOSPHERE.jpg',
+        nextDestination: "camino-ingles-8",
+        nextPos: '-12.5357 -0.44547 12.01129',
+        nextRotation: '-34.3 -89.5 -166.9',
+        prevPos: '12.5357 -0.44547 -12.01129',
+        prevRotation: '-34.3 -89.5 -166.9',
+    },
+    8: {
+        slug: 'camino-ingles-8',
+        image: 'IA fotos/camino-ingles/8.PHOTOSPHERE.jpg',
+        nextDestination: null,
+        nextPos: '-12.5357 -0.44547 12.01129',
+        nextRotation: '-34.3 -89.5 -166.9',
+        prevPos: '12.5357 -0.44547 -12.01129',
+        prevRotation: '-34.3 -89.5 -166.9',
+    }
+};
