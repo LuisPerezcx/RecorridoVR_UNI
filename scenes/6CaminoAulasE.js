@@ -27,7 +27,7 @@ const caminoAulasE = {
         prevRotation: '-11.602 71.411 -168.287',
         extraButtons: [
             {
-                destination: 'passillo-c-1',
+                destination: 'passillo-d-1',
                 pos: '-0.789 0.207 12.041',
                 rotation: '-10.788 13.740 -3.107'
             }
@@ -140,6 +140,11 @@ const caminoAulasE = {
             {
                 destination: 'camino-cafe-1',
                 pos: '-0.45981 -0.47675 7.90443',
+                rotation: '-4.335571 50.45237 -22.8615889'
+            },
+            {
+                destination: 'camino-cafe-1',
+                pos: '-8 0.280 -16',
                 rotation: '-4.335571 50.45237 -22.8615889'
             }
         ],
