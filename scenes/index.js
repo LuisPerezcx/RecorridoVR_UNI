@@ -55,7 +55,8 @@ function combineScenes() {
     caminoCafe,
     labsBiologia,,
     caminoIngles,
-    pasilloD
+    pasilloD,
+    cafePlaza
   ];
 
   const combined = {};

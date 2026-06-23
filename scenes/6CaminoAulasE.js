@@ -143,7 +143,7 @@ const caminoAulasE = {
                 rotation: '-4.335571 50.45237 -22.8615889'
             },
             {
-                destination: 'camino-cafe-1',
+                destination: 'cafe-plaza-1',
                 pos: '-8 0.280 -16',
                 rotation: '-4.335571 50.45237 -22.8615889'
             }

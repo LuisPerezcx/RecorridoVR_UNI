@@ -15,7 +15,7 @@ const pasilloA = {
         slug: 'passillo-a-2',
         image: 'IA fotos/pasilloA/2.PHOTOSPHERE.jpg',
         nextDestination: 'camino-instituto-2',
-        prevDestination: 'entrada-pinos-5',
+        prevDestination: 'passillo-a-1',
         nextPos: '-9.617 0.054 -0.443',
         nextRotation: '-34.584 -121.150 -165.965',
         prevPos: '9.608 0.389 0.630',
