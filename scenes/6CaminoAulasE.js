@@ -13,6 +13,11 @@ const caminoAulasE = {
                 destination: 'passillo-c-1',
                 pos: '-2.485 -0.327 11.263',
                 rotation: '-20.773 13.747 -6.842'
+            },
+            {
+                destination: 'plaza-1',
+                pos: '1 -0.327 -11.263',
+                rotation: '0 -5 0'
             }
         ],
         infoPoints: []

@@ -41,6 +41,11 @@ const camInstituto = {
                 destination: 'entrada-pinos-7',
                 pos: '2.157 0.201 -11.58',
                 rotation: '-9.95 -169.064 -13.866'
+            },
+            {
+                destination: 'camino-instituto-6',
+                pos: '2.157 0.201 11.58',
+                rotation: '-9.95 -169.064 -13.866'
             }
         ],
         infoPoints: []
@@ -73,4 +78,61 @@ const camInstituto = {
         extraButtons: [],
         infoPoints: []
     },
+    //LAB - IA 
+    23:{
+        slug: 'camino-instituto-6',
+        image: 'IA fotos/camino-instituto/6.PHOTOSPHERE.jpg',
+        nextDestination: 'camino-instituto-7',
+        prevDestination: 'camino-instituto-3',
+        nextPos: '-13.246 0.500 -1.104',
+        nextRotation: '-32.620 -107.773 -165.196',
+        prevPos: '13.360 -0.447 -0.024',
+        prevRotation: '-22.343 67.504 -173.094',
+        extraButtons: [],
+        infoPoints: []
+    },
+    24:{
+        slug: 'camino-instituto-7',
+        image: 'IA fotos/camino-instituto/7.PHOTOSPHERE.jpg',
+        nextDestination: 'camino-instituto-8',
+        nextPos: '-13.246 0.500 -1.104',
+        nextRotation: '-32.620 -107.773 -165.196',
+        prevPos: '13.360 -0.447 -0.024',
+        prevRotation: '-22.343 67.504 -173.094',
+        extraButtons: [],
+        infoPoints: []
+    },
+    25:{
+        slug: 'camino-instituto-8',
+        image: 'IA fotos/camino-instituto/8.PHOTOSPHERE.jpg',
+        nextDestination: 'camino-instituto-9',
+        nextPos: '-13.246 0.500 -1.104',
+        nextRotation: '-32.620 -107.773 -165.196',
+        prevPos: '13.360 -0.447 -0.024',
+        prevRotation: '-22.343 67.504 -173.094',
+        extraButtons: [],
+        infoPoints: []
+    },
+    26:{
+        slug: 'camino-instituto-9',
+        image: 'IA fotos/camino-instituto/9.PHOTOSPHERE.jpg',
+        nextDestination: 'camino-instituto-10',
+        nextPos: '-13.246 0.500 -1.104',
+        nextRotation: '-32.620 -107.773 -165.196',
+        prevPos: '13.360 -0.447 -0.024',
+        prevRotation: '-22.343 67.504 -173.094',
+        extraButtons: [],
+        infoPoints: []
+    },
+    27:{
+        slug: 'camino-instituto-10',
+        image: 'IA fotos/camino-instituto/10.PHOTOSPHERE.jpg',
+        nextDestination: null,
+        nextPos: '13.246 0.500 -1.104',
+        nextRotation: '-32.620 -107.773 -165.196',
+        prevPos: '-13.246 0.500 -1.104',
+        prevRotation: '-22.343 67.504 -173.094',
+        extraButtons: [],
+        infoPoints: []
+    }
 }
