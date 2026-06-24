@@ -4,10 +4,10 @@ const pasilloD = {
         image: 'IA fotos/pasilloD-inst/1.PHOTOSPHERE.jpg',
         nextDestination: 'passillo-d-2',
         prevDestination: 'camino-aulas-e-2',
-        nextPos: '-13.809 -0.577 -0.422',
-        nextRotation: '-37.270 -124.147 -158.596',
-        prevPos: '12.504 -0.173 1.308',
-        prevRotation: '-30.924 62.966 -170.610',
+        nextPos: '-10.48538 0.09538 0.05723',
+        nextRotation: '-22.876485886 -112.89445803 -173.319160069',
+        prevPos: '10.5734 -0.173 -0.76457',
+        prevRotation: '-20.11998593 67.9865990 -171.417513',
         extraButtons: [],
         infoPoints: []
     },
@@ -17,8 +17,8 @@ const pasilloD = {
         nextDestination: 'passillo-d-3',
         nextPos: '-10.971 0.899 -0.764',
         nextRotation: '-35.968 -123.209 -162.772',
-        prevPos: '15.111 1.044 2.164',
-        prevRotation: '-35.862 51.740 -167.928',
+        prevPos: '11.591756 0.5152 0.9063',
+        prevRotation: '-25.92175656 59.88497578 -171.49887',
         extraButtons: [],
         infoPoints: []
     },
@@ -34,8 +34,8 @@ const pasilloD = {
         extraButtons: [
             {
                 destination: 'passillo-d-2',
-                pos: '0.789 0.3 -11.041',
-                rotation: '-10.788 13.740 -3.107'
+                pos: '-0.04882 0.20832 -10.89861',
+                rotation: '-18.7219689136 154.790277 -173.578136'
             }
         ],
         infoPoints: []
