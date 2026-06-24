@@ -58,7 +58,8 @@ function combineScenes() {
     pasilloD,
     cafePlaza,
     plaza,
-    labtur
+    labtur,
+    labAmbiental,
   ];
 
   const combined = {};

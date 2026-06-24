@@ -43,7 +43,7 @@ const pasilloD = {
     4: {
         slug: 'passillo-d-4',
         image: 'IA fotos/pasilloD-inst/4.PHOTOSPHERE.jpg',
-        nextDestination: null,
+        nextDestination: 'lab-ambiental-1',
         nextPos: '-11.835 0.024 -0.137',
         nextRotation: '-39.725 -122.682 -171.816',
         prevDestination: 'passillo-d-3',
