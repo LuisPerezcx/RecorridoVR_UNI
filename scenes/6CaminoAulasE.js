@@ -115,7 +115,15 @@ const caminoAulasE = {
                 rotation: '-16.57395 34.5006536'
             }
         ],
-        infoPoints: []
+        infoPoints: [
+            {
+                pos: '-4.987 -1.742 7.025', // 
+                text: 'Laboratorios de \n Biologia\n<--', // saltos de línea con \n
+                scale: '3 1.5 1.5',          //tamaño de la placa (ajustar) (ancho, alto, profundidad) por lo general solo se toca el ancho (x) y el alto (y)
+                rotation: '0.071 161.733 -0.771',       //  gira la placa si hace falta por lo generar solo se rota en Y para que quede de frente al usuario x, y, z
+                textOffset: '0 2.65 0.2'    // posición del texto sobre la cara (x,y,z) (ajustar para que quede centrado)         
+            }               
+        ]
     },
     10: {
         slug: 'camino-aulas-e-10',
