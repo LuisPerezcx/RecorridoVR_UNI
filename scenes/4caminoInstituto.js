@@ -44,8 +44,8 @@ const camInstituto = {
             },
             {
                 destination: 'camino-instituto-6',
-                pos: '2.157 0.201 11.58',
-                rotation: '-9.95 -169.064 -13.866'
+                pos: '3.63343 0.86338 10.40293',
+                rotation: '-24.218353042384766 -8.569729741771724 -168.36479401478266'
             }
         ],
         infoPoints: [
@@ -92,9 +92,9 @@ const camInstituto = {
         image: 'IA fotos/camino-instituto/6.PHOTOSPHERE.jpg',
         nextDestination: 'camino-instituto-7',
         prevDestination: 'camino-instituto-3',
-        nextPos: '-13.246 0.500 -1.104',
-        nextRotation: '-32.620 -107.773 -165.196',
-        prevPos: '13.360 -0.447 -0.024',
+        nextPos: '-11.30264 0.72106 -1.2793',
+        nextRotation: '-22.164299346840767 -148.5822802223007 -152.4514642128192',
+        prevPos: '8.62014 -0.40792 -1.11129',
         prevRotation: '-22.343 67.504 -173.094',
         extraButtons: [],
         infoPoints: []
@@ -103,10 +103,10 @@ const camInstituto = {
         slug: 'camino-instituto-7',
         image: 'IA fotos/camino-instituto/7.PHOTOSPHERE.jpg',
         nextDestination: 'camino-instituto-8',
-        nextPos: '-13.246 0.500 -1.104',
-        nextRotation: '-32.620 -107.773 -165.196',
-        prevPos: '13.360 -0.447 -0.024',
-        prevRotation: '-22.343 67.504 -173.094',
+        nextPos: '-9.79254 0.0206 -0.78548',
+        nextRotation: '-30.79762740387201 -142.96099129427225 -164.95340330257375',
+        prevPos: '2.53508 -0.467 -9.55482',
+        prevRotation: '-14.07929189974972 156.9182431836591 -176.04873100528215',
         extraButtons: [],
         infoPoints: []
     },
@@ -114,10 +114,10 @@ const camInstituto = {
         slug: 'camino-instituto-8',
         image: 'IA fotos/camino-instituto/8.PHOTOSPHERE.jpg',
         nextDestination: 'camino-instituto-9',
-        nextPos: '-13.246 0.500 -1.104',
-        nextRotation: '-32.620 -107.773 -165.196',
-        prevPos: '13.360 -0.447 -0.024',
-        prevRotation: '-22.343 67.504 -173.094',
+        nextPos: '-7.13256 -0.32124 -0.05032',
+        nextRotation: '-12.633719382634652 -112.63433519799776 -172.74906706312373',
+        prevPos: '-0.83975 -0.12166 9.56513',
+        prevRotation: '-23.12113886470924 -11.566299010305928 -176.66179584607212',
         extraButtons: [],
         infoPoints: []
     },
@@ -125,10 +125,10 @@ const camInstituto = {
         slug: 'camino-instituto-9',
         image: 'IA fotos/camino-instituto/9.PHOTOSPHERE.jpg',
         nextDestination: 'camino-instituto-10',
-        nextPos: '-13.246 0.500 -1.104',
-        nextRotation: '-32.620 -107.773 -165.196',
-        prevPos: '13.360 -0.447 -0.024',
-        prevRotation: '-22.343 67.504 -173.094',
+        nextPos: '-10.11481 1.32141 -2.35188',
+        nextRotation: '-24.259606003634186 -109.31576364860003 -173.7763803897933',
+        prevPos: '-0.42655 0.65581 8.5245',
+        prevRotation: '-22.34306217892158 -27.758086300702992 -173.09398765579246',
         extraButtons: [],
         infoPoints: []
     },
@@ -138,8 +138,8 @@ const camInstituto = {
         nextDestination: null,
         nextPos: '13.246 0.500 -1.104',
         nextRotation: '-32.620 -107.773 -165.196',
-        prevPos: '-13.246 0.500 -1.104',
-        prevRotation: '-22.343 67.504 -173.094',
+        prevPos: '-9.64413 0.62 0.37833',
+        prevRotation: '-23.451735512499727 -69.86360874927692 -14.558857574274217',
         extraButtons: [],
         infoPoints: []
     }
