@@ -31,7 +31,13 @@ const pasilloC = {
         prevDestination: 'passillo-c-2',
         prevPos:'11.815 -1.284 1.023',
         prevRotation: '-20.806 66.789 -169.194',
-        extraButtons: [],
+        extraButtons: [
+            {
+                destination: 'passillo-d-5',
+                pos: '0.789 0.207 -12.041',
+                rotation: '-10.788 13.740 -3.107'
+            }
+        ],
         infoPoints: []
     },
 

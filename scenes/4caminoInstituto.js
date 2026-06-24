@@ -39,11 +39,24 @@ const camInstituto = {
         extraButtons: [
             {
                 destination: 'entrada-pinos-7',
-                pos: '2.655 0.029 -11.538',
-                rotation: '-17.215 -168.562 -16.000'
+                pos: '2.157 0.201 -11.58',
+                rotation: '-9.95 -169.064 -13.866'
+            },
+            {
+                destination: 'camino-instituto-6',
+                pos: '2.157 0.201 11.58',
+                rotation: '-9.95 -169.064 -13.866'
             }
         ],
-        infoPoints: []
+        infoPoints: [
+            {
+                pos: '8.840 -1.679 10.306', // 
+                text: 'Laboratorio de Redes \n Electronica e IA\n-->', // saltos de línea con \n
+                scale: '3 1.5 1.5',          //tamaño de la placa (ajustar) (ancho, alto, profundidad) por lo general solo se toca el ancho (x) y el alto (y)
+                rotation: '-10.404 -130.132 1.306',       //  gira la placa si hace falta por lo generar solo se rota en Y para que quede de frente al usuario x, y, z
+                textOffset: '0.2 2.60 0.2'    // posición del texto sobre la cara (x,y,z) (ajustar para que quede centrado)         
+            }                   
+        ]
     },
     21: {
         slug: 'camino-instituto-4',
@@ -66,11 +79,68 @@ const camInstituto = {
         slug: 'camino-instituto-5',
         image: 'IA fotos/camino-instituto/5.PHOTOSPHERE.jpg',
         nextDestination: 'camino-salas-1',
-        nextPos: '11.015 0.500 9.915',
-        nextRotation: '-40.823 64.508 -21.969',
-        prevPos: '7.500 -0.141 -3.030',
-        prevRotation: '-8.885 89.978 -168.220',
+        nextPos: '8.6514 0.87362 8.28859',
+        prevPos: '9.914940.29331-4.35502',
+        prevRotation: '-28.582572 81.67112299 -157.2539964', 
+        nextRotation: '-31.3316240689 73.6382547035 -19.1625734',
         extraButtons: [],
         infoPoints: []
     },
+    //LAB - IA 
+    23:{
+        slug: 'camino-instituto-6',
+        image: 'IA fotos/camino-instituto/6.PHOTOSPHERE.jpg',
+        nextDestination: 'camino-instituto-7',
+        prevDestination: 'camino-instituto-3',
+        nextPos: '-13.246 0.500 -1.104',
+        nextRotation: '-32.620 -107.773 -165.196',
+        prevPos: '13.360 -0.447 -0.024',
+        prevRotation: '-22.343 67.504 -173.094',
+        extraButtons: [],
+        infoPoints: []
+    },
+    24:{
+        slug: 'camino-instituto-7',
+        image: 'IA fotos/camino-instituto/7.PHOTOSPHERE.jpg',
+        nextDestination: 'camino-instituto-8',
+        nextPos: '-13.246 0.500 -1.104',
+        nextRotation: '-32.620 -107.773 -165.196',
+        prevPos: '13.360 -0.447 -0.024',
+        prevRotation: '-22.343 67.504 -173.094',
+        extraButtons: [],
+        infoPoints: []
+    },
+    25:{
+        slug: 'camino-instituto-8',
+        image: 'IA fotos/camino-instituto/8.PHOTOSPHERE.jpg',
+        nextDestination: 'camino-instituto-9',
+        nextPos: '-13.246 0.500 -1.104',
+        nextRotation: '-32.620 -107.773 -165.196',
+        prevPos: '13.360 -0.447 -0.024',
+        prevRotation: '-22.343 67.504 -173.094',
+        extraButtons: [],
+        infoPoints: []
+    },
+    26:{
+        slug: 'camino-instituto-9',
+        image: 'IA fotos/camino-instituto/9.PHOTOSPHERE.jpg',
+        nextDestination: 'camino-instituto-10',
+        nextPos: '-13.246 0.500 -1.104',
+        nextRotation: '-32.620 -107.773 -165.196',
+        prevPos: '13.360 -0.447 -0.024',
+        prevRotation: '-22.343 67.504 -173.094',
+        extraButtons: [],
+        infoPoints: []
+    },
+    27:{
+        slug: 'camino-instituto-10',
+        image: 'IA fotos/camino-instituto/10.PHOTOSPHERE.jpg',
+        nextDestination: null,
+        nextPos: '13.246 0.500 -1.104',
+        nextRotation: '-32.620 -107.773 -165.196',
+        prevPos: '-13.246 0.500 -1.104',
+        prevRotation: '-22.343 67.504 -173.094',
+        extraButtons: [],
+        infoPoints: []
+    }
 }

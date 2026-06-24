@@ -54,6 +54,24 @@ const area1EntradaPinos = {
     // ESCENA 1: PRIMERA UBICACIÓN (ENTRADA PRINCIPAL)
     // Botones: NEXT (hacia escena 2) + EXTRA (acceso directo a capilla)
     // ═════════════════════════════════════════════════════════
+    0: {
+        slug: 'entrada-principal0',
+        image: 'IA fotos/entrada-pinos/0.PHOTOSPHERE.jpg',
+        nextDestination: 'entrada-principal',                  // Slug: segunda escena de entrada
+        nextPos: '-14.877 1.023 -0.486',   // Posición del botón NEXT a la derecha
+        nextRotation: '-41.150 118.953 -20.215',
+        prevPos: null,                       // Primera escena: no hay botón atrás
+        extraButtons: [],
+        infoPoints: [
+            {
+                pos: '8 -2 -10', // 
+                text: 'Entrada principal\n de la Universidad\n<--', // saltos de línea con \n
+                scale: '3 1.5 1.5',          //tamaño de la placa (ajustar) (ancho, alto, profundidad) por lo general solo se toca el ancho (x) y el alto (y)
+                rotation: '0 0 0',       //  gira la placa si hace falta por lo generar solo se rota en Y para que quede de frente al usuario x, y, z
+                textOffset: '0 2.65 0.2'    // posición del texto sobre la cara (x,y,z) (ajustar para que quede centrado)
+            }
+        ]
+    },
     1: {
         slug: 'entrada-principal',
         image: 'IA fotos/entrada-pinos/1.PHOTOSPHERE.jpg',
@@ -64,14 +82,19 @@ const area1EntradaPinos = {
         extraButtons: [],
         infoPoints: [
             {
-                pos: '8 2 -10',
-                text: 'Entrada principal de la Universidad',
-                color: '#3498db'
+                pos: '8 -2 -10', // 
+                text: 'Entrada principal\n de la Universidad\n<--', // saltos de línea con \n
+                scale: '3 1.5 1.5',          //tamaño de la placa (ajustar) (ancho, alto, profundidad) por lo general solo se toca el ancho (x) y el alto (y)
+                rotation: '0 0 0',       //  gira la placa si hace falta por lo generar solo se rota en Y para que quede de frente al usuario x, y, z
+                textOffset: '0 2.65 0.2'    // posición del texto sobre la cara (x,y,z) (ajustar para que quede centrado)
             },
             {
-                pos: '-8 2 -10',
-                text: 'Edificio de Administración',
-                color: '#9b59b6'
+                pos: '-10 -2 -2',
+                text: 'Edificio de Administracion\n -->', //no acepta acentos a-text no soporta acentos ni caracteres especiales, simplemente omitirlos.
+                color: '#9b59b6',
+                scale: '3.7 1.5 1',
+                rotation: '0 100 0',
+                textOffset: '0 2.5 0.2'
             }
         ]
     },

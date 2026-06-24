@@ -5,7 +5,7 @@
 
 // ⚙️ CONFIGURACIÓN DE DESARROLLO
 // Puede ser un número (índice global) o un slug (recomendado)
-const startingScene = 'camino-ingles-7';  // CAMBIAR AQUÍ: usar slug en lugar de número
+const startingScene = 'cafe-plaza-3';  // CAMBIAR AQUÍ: usar slug en lugar de número
 
 let currentLocation = null; // se resuelve desde `startingScene` en la inicialización
 let activeLaser = 'right';  // 'left' o 'right' - controla qué láser está visible
@@ -241,60 +241,53 @@ function createInfoPointsForScene() {
     infoEntity.setAttribute('class', 'info-point');
     infoEntity.setAttribute('data-info-id', index);
     infoEntity.setAttribute('position', infoPoint.pos);
-    
-    // Geometría visible (pequeña esfera clickeable)
-    infoEntity.setAttribute('geometry', 'primitive: sphere; radius: 0.3;');
-    infoEntity.setAttribute('material', `color: ${infoPoint.color}; opacity: 0.6;`);
-    
+    // La rotación va en el padre para que modelo Y texto giren juntos.
+    if (infoPoint.rotation) {
+      infoEntity.setAttribute('rotation', infoPoint.rotation);
+    }
+
+    // Modelo 3D de la placa/cartel en su PROPIA sub-entidad.
+    // Así el `scale` afecta solo a la placa y NO al texto (que es hermano).
+    const modelEntity = document.createElement('a-entity');
+    modelEntity.setAttribute('gltf-model', '#sign-model');
+    modelEntity.setAttribute('scale', infoPoint.scale || '1 1 1');
+    infoEntity.appendChild(modelEntity);
+
     // Crear contenedor para el texto
-    // Billboard: siempre mira hacia la cámara
+    // Pegado a la cara del cartel: gira junto con él (sin billboard)
     const textContainer = document.createElement('a-entity');
-    textContainer.setAttribute('position', '0 -1.5 0');
-    textContainer.setAttribute('visible', 'false');
+    textContainer.setAttribute('position', infoPoint.textOffset || '0 0 0.2');
+    textContainer.setAttribute('visible', 'true');  // Texto siempre visible
     textContainer.setAttribute('class', 'info-text-container');
-    textContainer.setAttribute('billboard', '');  // Siempre mira a la cámara
     
     // Texto de información con mejor contraste y legibilidad
     const textEntity = document.createElement('a-text');
-    textEntity.setAttribute('value', infoPoint.text);
+    // Soporta saltos de línea: tanto '\n' real como el literal escapado "\\n"
+    const textValue = (infoPoint.text || '').replace(/\\n/g, '\n');
+    textEntity.setAttribute('value', textValue);
     textEntity.setAttribute('align', 'center');
     textEntity.setAttribute('anchor', 'center');
     textEntity.setAttribute('position', '0 0 0');
     textEntity.setAttribute('scale', '1.5 1.5 1.5');  // Más grande para VR
     textEntity.setAttribute('color', infoPoint.color);
-    textEntity.setAttribute('font', 'https://cdn.aframe.io/fonts/Roboto-msdf.json');
-    textEntity.setAttribute('fontImage', 'https://cdn.aframe.io/fonts/Roboto-msdf.png');
+    // 'dejavu' (fuente de stock de A-Frame) incluye acentos y ñ del español.
+    // Roboto-msdf NO los tiene, por eso la 'ó'/'ñ' no se renderizaban.
+    textEntity.setAttribute('font', infoPoint.font || 'dejavu');
     textEntity.setAttribute('maxWidth', '4');
-    textEntity.setAttribute('wrapCount', '16');
+    // wrapCount = cuántos caracteres por línea antes de auto-ajustar.
+    // Súbelo si usas saltos manuales y no quieres que parta tus líneas.
+    textEntity.setAttribute('wrapCount', infoPoint.wrapCount || 16);
     textEntity.setAttribute('letterSpacing', '3');  // Más espaciado
     textEntity.setAttribute('lineHeight', '65');  // Espaciado entre líneas
     // Outline grueso para mejor contraste
     textEntity.setAttribute('outlineWidth', '0.15');
     textEntity.setAttribute('outlineColor', '#000000');
-    // Fondo adaptativo que se ajusta mejor al texto
-    const bgEntity = document.createElement('a-plane');
-    bgEntity.setAttribute('position', '0 0 -0.1');
-    bgEntity.setAttribute('width', '5');  // Más ancho para cualquier texto
-    bgEntity.setAttribute('height', '2.5');  // Más alto para multi-línea
-    bgEntity.setAttribute('material', 'color: #000000; opacity: 0.15; side: double;');
-    bgEntity.setAttribute('class', 'info-bg-subtle');
-    textContainer.appendChild(bgEntity);
-    
+
     textEntity.setAttribute('class', 'info-text');
     textContainer.appendChild(textEntity);
     
     infoEntity.appendChild(textContainer);
     container.appendChild(infoEntity);
-    
-    // Mostrar/ocultar texto + fondo SOLO con cursor visual (no raycaster de controles)
-    infoEntity.addEventListener('mouseenter', () => {
-      textContainer.setAttribute('visible', 'true');
-      console.log(`ℹ️ Cursor sobre info punto ${index}: ${infoPoint.text}`);
-    });
-    
-    infoEntity.addEventListener('mouseleave', () => {
-      textContainer.setAttribute('visible', 'false');
-    });
   });
   
   console.log(`ℹ️ Se crearon ${currentScene.infoPoints.length} puntos de información para la escena ${currentLocation}`);

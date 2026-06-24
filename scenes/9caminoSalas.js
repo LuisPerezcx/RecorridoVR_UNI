@@ -35,7 +35,13 @@ const caminoSalas = {
         nextRotation: '-41.546 26.564 -25.988',
         prevPos: '7.386 -0.197 0.170',
         prevRotation: '-8.269 68.122 -175.320',
-        extraButtons: [],
+        extraButtons: [
+            {
+                destination: 'labtur-1',
+                pos: '2.157 0.201 -11.58',
+                rotation: '-9.95 -169.064 -13.866'
+            }
+        ],
         infoPoints: []
     },
     4: {
