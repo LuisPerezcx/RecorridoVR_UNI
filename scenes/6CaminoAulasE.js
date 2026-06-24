@@ -148,7 +148,15 @@ const caminoAulasE = {
                 rotation: '-4.335571 50.45237 -22.8615889'
             }
         ],
-        infoPoints: []
+        infoPoints: [
+            {
+                pos: '-5.399 -1.347 5.746', // 
+                text: 'Cafetería \n universitaria\n<--', // saltos de línea con \n
+                scale: '3 1.5 1.5',          //tamaño de la placa (ajustar) (ancho, alto, profundidad) por lo general solo se toca el ancho (x) y el alto (y)
+                rotation: '0.071 144.350 -0.771',       //  gira la placa si hace falta por lo generar solo se rota en Y para que quede de frente al usuario x, y, z
+                textOffset: '0 2.65 0.2'    // posición del texto sobre la cara (x,y,z) (ajustar para que quede centrado)         
+            }       
+        ]
     },
     12: {
         slug: 'camino-aulas-e-12',
