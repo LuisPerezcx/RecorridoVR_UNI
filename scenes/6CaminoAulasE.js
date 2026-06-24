@@ -16,8 +16,8 @@ const caminoAulasE = {
             },
             {
                 destination: 'plaza-1',
-                pos: '1 -0.327 -11.263',
-                rotation: '0 -5 0'
+                pos: '1.08198 1.08848 -11.25597',
+                rotation: '-16.88621213 -161.243501579 -12.43948669'
             }
         ],
         infoPoints: []

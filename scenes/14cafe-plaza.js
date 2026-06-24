@@ -28,8 +28,8 @@ const cafePlaza = {
         image: 'IA fotos/cafe-plaza/3.PHOTOSPHERE.jpg',
         nextDestination: "plaza-3", //todo: seguir a plaza
         prevDestination: 'cafe-plaza-2',
-        nextPos: '-13.809 -0.577 -0.422',
-        nextRotation: '-37.270 -124.147 -158.596',
+        nextPos: '-9.08717 0.77491 -0.14236',
+        nextRotation: '-17.88201278603 -111.8745931616 -174.4066339',
         prevPos: '10.72337 -0.09444 1.02676',
         prevRotation: '-16.030213192170 53.69130202391 -169.2305332432',
         extraButtons: [],
