@@ -173,8 +173,8 @@ const caminoAulasE = {
             },
             {
                 destination: 'cafe-plaza-1',
-                pos: '-8 0.280 -16',
-                rotation: '-4.335571 50.45237 -22.8615889'
+                pos: '-5.08985 0.85656 -11.02797',
+                rotation: '-29.68035970 158.72306023 -158.9820371'
             }
         ],
         infoPoints: [
