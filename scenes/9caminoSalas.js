@@ -38,8 +38,8 @@ const caminoSalas = {
         extraButtons: [
             {
                 destination: 'labtur-1',
-                pos: '2.157 0.201 -11.58',
-                rotation: '-9.95 -169.064 -13.866'
+                pos: '-3.99506 0.02348 -8.55413',
+                rotation: '-19.309823611499002 -176.56267414751449 -1.5784987255854181'
             }
         ],
         infoPoints: []
