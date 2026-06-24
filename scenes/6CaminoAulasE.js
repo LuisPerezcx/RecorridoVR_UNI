@@ -43,7 +43,15 @@ const caminoAulasE = {
         prevPos: '6.865 -0.036 3.531',
         prevRotation: '-9.438 37.356 -174.954',
         extraButtons: [],
-        infoPoints: []
+        infoPoints: [
+            {
+                pos: '-21.344 -2.647 -6.504', // 
+                text: 'Camino al orquideario \n y al invernadero\n<--', // saltos de línea con \n
+                scale: '3 1.5 1.5',          //tamaño de la placa (ajustar) (ancho, alto, profundidad) por lo general solo se toca el ancho (x) y el alto (y)
+                rotation: '-16.087 77.167 1.832',       //  gira la placa si hace falta por lo generar solo se rota en Y para que quede de frente al usuario x, y, z
+                textOffset: '0.2 2.60 0.2'    // posición del texto sobre la cara (x,y,z) (ajustar para que quede centrado)         
+            }                
+        ]
     },
     4: {
         slug: 'camino-aulas-e-4',
