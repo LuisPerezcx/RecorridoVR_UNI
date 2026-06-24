@@ -21,15 +21,15 @@ const caminoAulasE = {
         slug: 'camino-aulas-e-2',
         image: 'IA fotos/caminoAulasE/2.PHOTOSPHERE.jpg',
         nextDestination: 'camino-aulas-e-3',
-        nextPos: '-8.697 -0.500 0.068',
-        nextRotation: '-25.983 -112.616 -167.300',
+        nextPos: '-10.007 0.2532 -0.292',
+        nextRotation: '-16.84094847 -110.328180072 -174.031346608',
         prevPos: '8.871 0.014 0.365',
-        prevRotation: '-11.602 71.411 -168.287',
+        prevRotation: '-14.2196665 68.68560752 -175.33769038',
         extraButtons: [
             {
                 destination: 'passillo-d-1',
-                pos: '-0.789 0.207 12.041',
-                rotation: '-10.788 13.740 -3.107'
+                pos: '-0.41513 0.207 7.96643',
+                rotation: '-16.832927063 14.146327961 -4.80768888'
             }
         ],
         infoPoints: []
