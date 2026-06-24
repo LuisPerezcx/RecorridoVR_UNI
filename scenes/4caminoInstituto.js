@@ -48,7 +48,15 @@ const camInstituto = {
                 rotation: '-9.95 -169.064 -13.866'
             }
         ],
-        infoPoints: []
+        infoPoints: [
+            {
+                pos: '8.840 -1.679 10.306', // 
+                text: 'Laboratorio de Redes \n Electronica e IA\n-->', // saltos de línea con \n
+                scale: '3 1.5 1.5',          //tamaño de la placa (ajustar) (ancho, alto, profundidad) por lo general solo se toca el ancho (x) y el alto (y)
+                rotation: '-10.404 -130.132 1.306',       //  gira la placa si hace falta por lo generar solo se rota en Y para que quede de frente al usuario x, y, z
+                textOffset: '0.2 2.60 0.2'    // posición del texto sobre la cara (x,y,z) (ajustar para que quede centrado)         
+            }                   
+        ]
     },
     21: {
         slug: 'camino-instituto-4',
