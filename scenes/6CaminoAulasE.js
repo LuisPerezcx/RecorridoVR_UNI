@@ -20,7 +20,15 @@ const caminoAulasE = {
                 rotation: '-16.88621213 -161.243501579 -12.43948669'
             }
         ],
-        infoPoints: []
+        infoPoints: [
+            {
+                pos: '-4.002 -2.971 -7.818', // 
+                text: 'Servicios escolares \n-->', // saltos de línea con \n
+                scale: '3 1.5 1.5',          //tamaño de la placa (ajustar) (ancho, alto, profundidad) por lo general solo se toca el ancho (x) y el alto (y)
+                rotation: '-5.459 55.823 0.344',       //  gira la placa si hace falta por lo generar solo se rota en Y para que quede de frente al usuario x, y, z
+                textOffset: '0.2 2.60 0'    // posición del texto sobre la cara (x,y,z) (ajustar para que quede centrado)         
+            }                  
+        ]
     },
     2: {
         slug: 'camino-aulas-e-2',

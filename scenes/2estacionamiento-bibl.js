@@ -26,7 +26,15 @@ const area2Estacionamiento = {
                 rotation: '-6.353 119.473 -162.669'  // (Opcional) Rotación del botón
             }
         ],
-        infoPoints: []
+        infoPoints: [
+            {
+                pos: '-13.806 -3.221 -5.794', // 
+                text: 'Departamento de\n finanzas y Biblioteca\n <--', // saltos de línea con \n
+                scale: '3 1.5 1.5',          //tamaño de la placa (ajustar) (ancho, alto, profundidad) por lo general solo se toca el ancho (x) y el alto (y)
+                rotation: '-5.459 47.920 0.344',       //  gira la placa si hace falta por lo generar solo se rota en Y para que quede de frente al usuario x, y, z
+                textOffset: '0.2 2.60 0'    // posición del texto sobre la cara (x,y,z) (ajustar para que quede centrado)         
+            }            
+        ]
     },
     11: {
         slug: 'estacionamiento-3',
@@ -48,7 +56,15 @@ const area2Estacionamiento = {
         prevPos: '11.483 -1.602 11.473',
         prevRotation: '-32.582 94.618 131.556',
         extraButtons: [],
-        infoPoints: []
+        infoPoints: [
+            {
+                pos: '-9.375 -3.221 -6.942', // 
+                text: 'Biblioteca\n <--', // saltos de línea con \n
+                scale: '3 1.5 1.5',          //tamaño de la placa (ajustar) (ancho, alto, profundidad) por lo general solo se toca el ancho (x) y el alto (y)
+                rotation: '-5.459 47.920 0.344',       //  gira la placa si hace falta por lo generar solo se rota en Y para que quede de frente al usuario x, y, z
+                textOffset: '0.2 2.60 0'    // posición del texto sobre la cara (x,y,z) (ajustar para que quede centrado)         
+            }                  
+        ]
     },
     13: {
         slug: 'estacionamiento-5',

@@ -145,7 +145,15 @@ const area1EntradaPinos = {
                 rotation:  '-25.83294810 166.41387272 -154.424157'  // (Opcional) Rotación del botón
             }
         ],
-        infoPoints: []
+        infoPoints: [
+            {
+                pos: '-5.658 -1.915 -19.873', // 
+                text: 'Camino hacia\n cafeteria \n <--', // saltos de línea con \n
+                scale: '3 1.5 1.5',          //tamaño de la placa (ajustar) (ancho, alto, profundidad) por lo general solo se toca el ancho (x) y el alto (y)
+                rotation: '-2.930 -16.694 -4.480',       //  gira la placa si hace falta por lo generar solo se rota en Y para que quede de frente al usuario x, y, z
+                textOffset: '0.2 2.60 0'    // posición del texto sobre la cara (x,y,z) (ajustar para que quede centrado)         
+            }               
+        ]
     },
     //estacionamiento
     5: {
