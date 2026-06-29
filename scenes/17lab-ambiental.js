@@ -41,7 +41,7 @@ const labAmbiental = {
         prevDestination: 'lab-ambiental-1',
         nextPos: '-11.835 0.024 -0.137',
         nextRotation: '-39.725 -122.682 -171.816',
-        prevPos: '10.417 --1.284 -8.022',
+        prevPos: '10.417 -1.284 -8.022',
         prevRotation: '-20.806 96.575 -169.194',
         extraButtons: [],
         infoPoints: []
