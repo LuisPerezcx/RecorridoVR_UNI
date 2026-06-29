@@ -88,8 +88,8 @@ const camInstituto = {
         image: 'IA fotos/camino-instituto/5.PHOTOSPHERE.jpg',
         nextDestination: 'camino-salas-1',
         nextPos: '8.6514 0.87362 8.28859',
-        prevPos: '9.914940.29331-4.35502',
-        prevRotation: '-28.582572 81.67112299 -157.2539964', 
+        prevPos: '7.249 0.580 -3.201 ',
+        prevRotation: '-28.583 81.671 -157.254', 
         nextRotation: '-31.3316240689 73.6382547035 -19.1625734',
         extraButtons: [],
         infoPoints: []

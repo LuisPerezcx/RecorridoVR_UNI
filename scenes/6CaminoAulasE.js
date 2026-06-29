@@ -92,7 +92,7 @@ const caminoAulasE = {
         slug: 'camino-aulas-e-6',
         image: 'IA fotos/caminoAulasE/6.PHOTOSPHERE.jpg',
         nextDestination: "camino-aulas-e-7",
-        nextPos: '-8.846 -0.500 -0.302',
+        nextPos: '--8.844 -0.500 -0.372',
         nextRotation: '-23.508 -115.401 -164.578',
         prevPos: '8.758 -0.108 0.097',
         prevRotation: '-14.388 57.478 -172.181',
