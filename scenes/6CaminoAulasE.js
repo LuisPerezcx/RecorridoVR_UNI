@@ -171,8 +171,8 @@ const caminoAulasE = {
         nextDestination: "camino-aulas-e-12",
         nextPos: '-9.27564 0.24125 -0.85737',
         nextRotation: '-16.5057681 -118.4401165 -172.72041917',
-        prevPos: '7.44865 -0.5 -1.59319',
-        prevRotation: '-34.991678 132.837400 -29.1549574',
+        prevPos: '7.39408 -0.0623 -1.00274',
+        prevRotation: '-14.07986485754485 130.46707361364952 -14.358895303773561',
         extraButtons: [
             {
                 destination: 'camino-cafe-1',
@@ -200,7 +200,7 @@ const caminoAulasE = {
         image: 'IA fotos/caminoCafe/4.PHOTOSPHERE.jpg',
         nextDestination: "camino-aulas-e-13",
         nextPos: '9.90245 0.34 -1.05349',
-        nextRotation: '-42.5209 134.048059 -29.692964',
+        nextRotation: '-20.28786256778732 124.98673230322318 -12.720236009699407',
         prevPos: '-11.58383 0.59842 -0.0885',
         prevRotation: '-38.7668973 -55.5700306 -19.676516600',
         extraButtons: [],
